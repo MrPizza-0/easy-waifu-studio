@@ -300,7 +300,7 @@ class WaifuText:
         return {
             "required": {
                 "base": ("STRING", {"multiline": True, "default": "", "tooltip": "Quality words + art style words (filled by the model/style preset)"}),
-                "character": ("STRING", {"multiline": True, "default": "", "tooltip": "Who she is + outfit (filled by the character preset)"}),
+                "character": ("STRING", {"multiline": True, "default": "", "tooltip": "Character + outfit (filled by the character preset)"}),
                 "lora_triggers": ("STRING", {"multiline": True, "default": "", "tooltip": "Trigger words of LoRAs you switch on in the Power Lora Loader"}),
                 "scene": ("STRING", {"multiline": True, "default": "", "tooltip": "Pose, place, mood. Never overwritten by presets."}),
                 "negative": ("STRING", {"multiline": True, "default": ""}),

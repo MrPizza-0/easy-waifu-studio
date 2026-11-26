@@ -32,7 +32,7 @@ export function addCharacterSheet(mergeInto = null) {
     title: mergeInto ? `Add a LoRA to ${mergeInto}` : "Add a character",
     body: (bd, close) => {
       bd.append(
-        bigButton("search", "Find her on Civitai", null, () => { close(); setTimeout(() => civitaiFlow(mergeInto), 250); }),
+        bigButton("search", "Find character on Civitai", null, () => { close(); setTimeout(() => civitaiFlow(mergeInto), 250); }),
         !mergeInto && bigButton("edit", "Make one without a LoRA", null, () => { close(); setTimeout(() => editCharacter(null), 250); }),
         !mergeInto && bigButton("upload", "Import a character pack (.json)", null, () => { close(); importPack(); }));
     },
@@ -105,7 +105,7 @@ function reviewDraft(d, mergeInto) {
           h("div.row", { style: { alignItems: "flex-start" } },
             d.image ? h("img.nsfw", { src: pic(d.image), style: { width: "84px", height: "112px", objectFit: "cover", borderRadius: "10px", flex: "none" } }) : null,
             h("div.grow", { style: { display: "flex", flexDirection: "column", gap: "6px" } },
-              h("div.lbl", "Her name"), textInput(d.name, (v) => (d.name = v)),
+              h("div.lbl", "Name"), textInput(d.name, (v) => (d.name = v)),
               h("div.lbl", "Game / series"), textInput(d.franchise, (v) => (d.franchise = v)))),
           h("div.lbl", "Where should it go?"),
           h("button.picker", { onclick: async () => {
@@ -130,7 +130,7 @@ function reviewDraft(d, mergeInto) {
           h("div.grow", { style: { minWidth: 0 } },
             h("div.nm.ell", name),
             h("div", Object.keys(o).map((f) => h("span.badge2.ok", famLabel[f]))),
-            h("div.tr", { style: { whiteSpace: "normal", display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden" } }, first.tags || "(the creator listed no words: her basic look is used. Tap Fix to add some)")),
+            h("div.tr", { style: { whiteSpace: "normal", display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden" } }, first.tags || "(no trigger words)")),
           h("button.btn.sm", { onclick: () => outfitEditor({ name, outfit: o }, (res) => {
             if (res.deleted) { delete d.outfits[name]; keep.delete(name); }
             else {
@@ -147,7 +147,7 @@ function reviewDraft(d, mergeInto) {
   async function save(download) {
     const chosen = Object.fromEntries(Object.entries(d.outfits).filter(([n]) => keep.has(n)));
     if (!Object.keys(chosen).length) return toast("Tick at least one outfit.", { err: true });
-    // the creator listed no trigger words: use her basic look so the outfit still works
+    // the creator listed no trigger words: use the character's basic look so the outfit still works
     const look = (target && S.presets.characters[target]?.tags) || d.tags || "1girl";
     for (const o of Object.values(chosen)) for (const b of Object.values(o)) if (!b.tags?.trim()) b.tags = look;
     let name = d.name.trim(), data;
@@ -159,8 +159,8 @@ function reviewDraft(d, mergeInto) {
       if (!data.image && d.image) data.image = d.image;
       if (!data.franchise && d.franchise) data.franchise = d.franchise;
     } else {
-      if (!name) return toast("Give her a name.", { err: true });
-      if (S.presets.characters[name] && !(await confirmSheet("Name already used", `There already is a character called "${name}". Replace her?`, "Replace", true))) return;
+      if (!name) return toast("Name is missing.", { err: true });
+      if (S.presets.characters[name] && !(await confirmSheet("Name already used", `There already is a character called "${name}". Replace it?`, "Replace", true))) return;
       data = { franchise: d.franchise, tags: d.tags, image: d.image, default_outfit: Object.keys(chosen)[0], outfits: chosen };
     }
     data._downloads = d._downloads;
@@ -175,7 +175,7 @@ function reviewDraft(d, mergeInto) {
   }
 }
 
-// when the LoRA downloads finish: reload the presets and re-apply the character, so her LoRA is really used
+// when the LoRA downloads finish: reload the presets and re-apply the character, so its LoRA is really used
 async function waitForDownloads(name) {
   for (;;) {
     await new Promise((r) => setTimeout(r, 2000));
@@ -230,13 +230,13 @@ export async function editCharacter(name) {
           h("div.row", { style: { alignItems: "flex-start" } },
             c.image ? h("img.nsfw", { src: pic(c.image), style: { width: "90px", height: "120px", objectFit: "cover", borderRadius: "12px", flex: "none" } }) : h("div.noimg", { style: { width: "90px", height: "120px", borderRadius: "12px", flex: "none", background: "var(--s3)", display: "grid", placeItems: "center" } }, icon("user")),
             h("div.grow", { style: { display: "flex", flexDirection: "column", gap: "6px" } },
-              h("div.lbl", "Her name"), textInput(newName, (v) => { newName = v; touch(); }, "e.g. Luna Snow (Marvel Rivals)"),
+              h("div.lbl", "Name"), textInput(newName, (v) => { newName = v; touch(); }, "e.g. Luna Snow (Marvel Rivals)"),
               h("div.lbl", "Game / series"), textInput(c.franchise, (v) => { c.franchise = v; touch(); }, "e.g. Marvel Rivals"))),
           h("div.row.wrap",
-            lastImg && h("button.btn.sm", { onclick: () => { c.image = lastImg; touch(); draw(); } }, icon("image"), "Use my last result as her picture"),
+            lastImg && h("button.btn.sm", { onclick: () => { c.image = lastImg; touch(); draw(); } }, icon("image"), "Use last result as picture"),
             h("button.btn.sm.ghost", { onclick: async () => { const u = await promptSheet("Paste a picture link", "", "https://…"); if (u) { c.image = u.trim(); touch(); draw(); } } }, "Picture link…"),
             c.image && h("button.btn.sm.ghost", { onclick: () => { c.image = ""; touch(); draw(); } }, "No picture")),
-          h("div.lbl", "What she looks like"),
+          h("div.lbl", "Appearance"),
           tagArea(c.tags || "", (v) => { c.tags = v; touch(); }, { placeholder: "1girl, her name tag, hair color, eye color…" }),
           h("div.lbl", { style: { marginTop: "6px" } }, `Outfits (${Object.keys(c.outfits).length})`),
           ...Object.entries(c.outfits).map(([on, o]) => h("div.lora",
@@ -257,13 +257,13 @@ export async function editCharacter(name) {
           h("button.btn.pri.block", { style: { height: "52px", fontSize: "16px" }, onclick: () => doSave(true) }, icon("check"), "Save"),
           h("button.btn.block", { onclick: async () => { await doSave(true, true); } }, icon("zap"), "Save and make a test picture"),
           !isNew && h("div.row.wrap", { style: { marginTop: "10px" } },
-            h("button.btn.sm.ghost", { onclick: () => exportPack([name]) }, icon("share"), "Share her (pack file)"),
+            h("button.btn.sm.ghost", { onclick: () => exportPack([name]) }, icon("share"), "Share (pack file)"),
             info.shipped.includes(name) && info.edited.includes(name) && h("button.btn.sm.ghost", { onclick: async () => {
               if (!(await confirmSheet("Reset to the original?", `Your changes to ${name} are thrown away and the shipped version comes back.`, "Reset", true))) return;
               await api("/waifu/m/api/char/reset", { json: { name } }); s.close(); await afterCharChange(); toast(`${name} reset`);
             } }, icon("undo"), "Reset to original"),
             h("button.btn.sm.ghost.danger", { onclick: async () => {
-              if (!(await confirmSheet(`Delete ${name}?`, "She disappears from the character list. Her LoRA files stay on your PC.", "Delete", true))) return;
+              if (!(await confirmSheet(`Delete ${name}?`, "Removed from the character list. LoRA files stay on your PC.", "Delete", true))) return;
               await api("/waifu/m/api/char/delete", { json: { name } }); s.close(); await afterCharChange(); toast(`${name} deleted`);
             } }, icon("trash"), "Delete")));
         bd.classList.toggle("blurimg", S.settings.blur);
@@ -285,9 +285,9 @@ export async function editCharacter(name) {
 
   async function doSave(close, test = false) {
     const n = newName.trim();
-    if (!n) return toast("Give her a name first.", { err: true });
-    if (!Object.keys(c.outfits).length) return toast("She needs at least one outfit.", { err: true });
-    if (n !== name && S.presets.characters[n] && !(await confirmSheet("Name already used", `There already is a character called "${n}". Replace her?`, "Replace", true))) return;
+    if (!n) return toast("Name is missing.", { err: true });
+    if (!Object.keys(c.outfits).length) return toast("Add at least one outfit.", { err: true });
+    if (n !== name && S.presets.characters[n] && !(await confirmSheet("Name already used", `There already is a character called "${n}". Replace it?`, "Replace", true))) return;
     if (!c.outfits[c.default_outfit]) c.default_outfit = Object.keys(c.outfits)[0];
     await api("/waifu/m/api/char/save", { json: { name: n, old_name: name, data: c } });
     dirty = false;
@@ -298,7 +298,7 @@ export async function editCharacter(name) {
   }
 }
 
-// a character without a picture gets the first image you make of her
+// a character without a picture gets the first image you make of it
 export async function autoPicture(job) {
   const G = S.graph, p = G.roles().presets;
   if (!p) return;
@@ -349,14 +349,14 @@ export function outfitEditor(ctx, done) {
           h("button.btn.block.ghost.danger", { onclick: async () => {
             if (!(await confirmSheet("Delete this outfit?", `"${name}" is removed from this character.`, "Delete", true))) return;
             finished = true; s.close(); done({ deleted: true });
-          } }, icon("trash"), "Delete this outfit"));
+          } }, icon("trash"), "Delete outfit"));
       };
       const anyTags = () => o.any?.tags || ctx.baseTags || "";
       const blockEditor = (b) => {
         const lora = b.loras?.[0];
         const groups = (b.groups && b.groups.length ? b.groups : (lora && S.loras ? loraInfo(lora[0])?.words : null)) || [];
         const box = h("div", { style: { display: "flex", flexDirection: "column", gap: "10px" } });
-        const ta = tagArea(b.tags || "", (v) => { b.tags = v; drawChips(); }, { big: true, placeholder: "her trigger words, hair, eyes, clothes…" });
+        const ta = tagArea(b.tags || "", (v) => { b.tags = v; drawChips(); }, { big: true, placeholder: "trigger words, hair, eyes, clothes…" });
         const chips = h("div.chips");
         const drawChips = () => clear(chips, groups.map((g) => {
           const on = (b.tags || "").replace(/\s+/g, " ").includes(g.trim().replace(/\s+/g, " "));
@@ -532,7 +532,7 @@ export function editStyle(name) {
           !isNew && h("button.btn.block.ghost.danger", { onclick: async () => {
             if (!(await confirmSheet(`Delete the style "${name}"?`, "It disappears from the list. Its LoRA file stays on your PC.", "Delete", true))) return;
             await api("/waifu/m/api/style/delete", { json: { name } }); s.close(); await afterStyleChange(null); toast("Style deleted");
-          } }, icon("trash"), "Delete this style"));
+          } }, icon("trash"), "Delete style"));
       };
       draw();
     },

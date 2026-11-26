@@ -42,7 +42,7 @@ export function pickCharacter(current, fam) {
         const leave = (fn) => { s.close(); setTimeout(fn, 280); };
         bd.insertBefore(h("div.row", { style: { gap: "8px" } },
           h("button.btn.pri.grow", { style: { height: "48px", fontSize: "15px" }, onclick: () => leave(() => addCharacterSheet()) }, icon("plus"), "Add character"),
-          h("span.hint", { style: { maxWidth: "40%" } }, "Hold a character to edit her")), bd.firstChild);
+          h("span.hint", { style: { maxWidth: "40%" } }, "Hold a character to edit")), bd.firstChild);
         const draw = () => {
           clear(chips, franchises.map((f) => h("button.chip" + (f === group ? ".on" : ""), { onclick: () => { group = f; store.set("ch:group", f); draw(); } }, f)));
           const words = q.toLowerCase().split(/\s+/).filter(Boolean);

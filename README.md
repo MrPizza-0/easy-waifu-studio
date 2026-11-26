@@ -19,7 +19,7 @@ Open `http://<your-pc>:8188/waifu/m/` in your phone's browser. You don't install
 - **Create**: character, outfit, art style and model pickers, a prompt editor with tag autocomplete, and one-tap
   switches for each stage (Upscale 2x, Face, Hands, Mouth, Ultra 4x). You see a live preview while it samples.
 - Found a preview you like? Tap *Use seed*, turn on the stages you want and generate again. Only the new stages run.
-- **Upscale this** and **Inpaint this** work on any image. You paint the inpaint mask with your finger and pinch to zoom.
+- **Upscale** and **Inpaint** work on any image. You paint the inpaint mask with your finger and pinch to zoom.
 - **Gallery** shows your whole output folder: folders, favorites, search by prompt text, pinch to change the
   number of columns, full-screen viewer with zoom, before/after slider, image info, and Remix (loads the
   settings that made an image). Deleting moves files to a trash folder, with undo.
@@ -69,33 +69,28 @@ picks an address your phone can reach, and tells you what to change if there isn
 
 <img src="docs/characters.jpg" width="220" align="right" alt="Character list with pictures">
 
-51 characters come with the pack. They need no LoRA because the models already know them: Genshin Impact,
-Honkai: Star Rail, NIKKE, Overwatch, League of Legends, Final Fantasy, Street Fighter, One Piece, Fate and others.
-Each has a picture. The pictures are links to Safebooru and Civitai, downloaded and cached on your PC the first
-time you open the list.
+The included characters are pre trained in the model. No loras are included.
 
 To add a character from a Civitai LoRA, in the phone app:
 
-1. Open the character list and tap + Add character > Find her on Civitai.
-2. Type her name or paste the link to the LoRA's Civitai page.
-3. Waifu Studio reads the page and fills in her name, one outfit per LoRA version, the trigger words, the model
-   type (Anima or Illustrious) and a picture. If you already have her, the new outfits are added to her.
+1. Open the character list and tap + Add character > Find character on Civitai.
+2. Type the character's name or paste the link to the LoRA's Civitai page.
+3. Waifu Studio reads the page and fills in the name, one outfit per LoRA version, the trigger words, the model
+   type (Anima or Illustrious) and a picture. If the character already exists, the new outfits are added to it.
 4. Look over the list. Untick outfits you don't want, tap Fix to change words, then tap Add and download.
 
 <br clear="right">
 
 <img src="docs/importer.jpg" width="220" align="right" alt="Checking an imported character, with Fix buttons">
 
-The importer gets things wrong sometimes, so everything can be changed afterwards. Edit her opens an editor for
+The importer gets things wrong sometimes, so everything can be changed afterwards. Edit opens an editor for
 the name, picture and outfits. For each outfit you can set the LoRA, its strength and the words, and the trigger
 words from the LoRA page show up as buttons you tap to add. If you change one of the 51 built-in characters, you
-can reset her to the original. You can share characters as small pack files. A pack has the Civitai links,
+can reset it to the original. You can share characters as small pack files. A pack has the Civitai links,
 not the LoRA files.
 
 Your characters are saved in `ComfyUI/user/waifu_studio/`, so updating Waifu Studio doesn't touch them.
-When you switch between an Anima and an Illustrious model, each character switches to her LoRA for that model.
-
-The LoRAs belong to the people who made them. Waifu Studio downloads them from the creators' own Civitai pages.
+When you switch between an Anima and an Illustrious model, each character switches to its LoRA for that model.
 
 <br clear="right">
 

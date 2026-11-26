@@ -148,8 +148,8 @@ function drawResult() {
   if (final) {
     A("maximize", "Open", () => openViewer(imgs.map(toItem), Math.max(0, imgs.indexOf(final))));
     if (final.type === "output") {
-      A("zap", "Upscale this", () => useAsSource(relOf(final) + " [output]", "Upscale"));
-      A("brush", "Inpaint this", () => inpaintFrom(relOf(final) + " [output]"));
+      A("zap", "Upscale", () => useAsSource(relOf(final) + " [output]", "Upscale"));
+      A("brush", "Inpaint", () => inpaintFrom(relOf(final) + " [output]"));
     }
   }
   const cmp = job && imgs.length && jobCompare(job);
@@ -369,7 +369,7 @@ function presetSection() {
           h("div", famBadges(ch, fam))),
         icon("right")));
       bd.appendChild(h("div.row", { style: { gap: "6px" } },
-        !ch.custom && cname && h("button.btn.sm.grow", { onclick: () => editCharacter(cname) }, icon("edit"), "Edit her"),
+        !ch.custom && cname && h("button.btn.sm.grow", { onclick: () => editCharacter(cname) }, icon("edit"), "Edit"),
         !ch.custom && cname && h("button.btn.sm.grow", { onclick: () => civitaiFlow(cname) }, icon("plus"), "Add LoRA / outfits"),
         h("button.btn.sm.grow", { onclick: () => addCharacterSheet() }, icon("user"), "New character")));
       if (res && !res.ok) bd.appendChild(h("div.warnline", icon("info"), `No ${fam === "anima" ? "Anima" : "Illustrious"} LoRA for this outfit, so it uses tags only. Switch the model, or pick an outfit marked ${fam === "anima" ? "Anima" : "Illustrious"}.`));
