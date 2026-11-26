@@ -36,7 +36,9 @@ Open `http://<your-pc>:8188/waifu/m/` in your phone's browser. You don't install
 Tested with ComfyUI 0.32 on Windows (portable build), with an RTX 3090.
 
 1. In `ComfyUI/custom_nodes/`, run `git clone https://github.com/MrPizza-0/easy-waifu-studio`, or use
-   ComfyUI Manager's "Install via Git URL" with the same link.
+   ComfyUI Manager's "Install via Git URL" with the same link. After a git clone, also install the one Python
+   package it needs with ComfyUI's Python. On the Windows portable build, from the `ComfyUI_windows_portable` folder:
+   `python_embeded\python.exe -m pip install -r ComfyUI\custom_nodes\easy-waifu-studio\requirements.txt`
 2. Install these node packs with ComfyUI Manager: rgthree-comfy, ComfyUI-KJNodes, ComfyUI-Impact-Pack,
    ComfyUI-Impact-Subpack and ComfyUI-Custom-Scripts. Custom-Scripts is optional. It shows the final prompt on
    the PC; tag autocomplete works without it.
