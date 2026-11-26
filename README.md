@@ -58,6 +58,11 @@ Use [Tailscale](https://tailscale.com) (free) on the PC and the phone. Then eith
 - run `tailscale serve --bg 8188` on the PC (no `--listen` needed) and open
   `https://<pc-name>.<tailnet>.ts.net/waifu/m/`. Over HTTPS, Chrome offers "Install app" and the page runs full-screen.
 
+You don't have to type the address. On Windows, Waifu Studio puts an icon in the system tray while ComfyUI runs.
+Click it (or right-click > Connect phone) and a page opens with a QR code: scan it with your phone camera. The page
+picks an address your phone can reach, and tells you what to change if there isn't one. The same page is at
+`http://127.0.0.1:8188/waifu/connect`. To hide the tray icon, add `"tray": false` to `ComfyUI/user/waifu_studio.json`.
+
 ## Characters and outfits
 
 <img src="docs/characters.jpg" width="220" align="right" alt="Character list with pictures">

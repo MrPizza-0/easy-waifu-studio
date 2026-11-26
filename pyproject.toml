@@ -3,7 +3,7 @@ name = "easy-waifu-studio"
 description = "One anime workflow with presets, outfits and stages, plus a full phone UI for ComfyUI (generate, gallery, queue, inpaint)."
 version = "1.0.0"
 license = { file = "LICENSE" }
-dependencies = []
+dependencies = ["qrcode"]
 
 [project.urls]
 Repository = "https://github.com/MrPizza-0/easy-waifu-studio"
