@@ -1,0 +1,4 @@
+__pycache__/
+.cache/
+data/mobile_favorites.json
+*.part

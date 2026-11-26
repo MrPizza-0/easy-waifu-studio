@@ -1,0 +1,4902 @@
+{
+ "id": "7a1f7d3e-6f2b-4d55-9c3e-5a1f00d1e001",
+ "revision": 0,
+ "last_node_id": 82,
+ "last_link_id": 109,
+ "nodes": [
+  {
+   "id": 1,
+   "type": "Note",
+   "pos": [
+    0,
+    30
+   ],
+   "size": [
+    440,
+    400
+   ],
+   "flags": {},
+   "order": 1,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "Note"
+   },
+   "widgets_values": [
+    "💖 WAIFU STUDIO - quick start\n\n1. 🎯 PRESETS: pick model, character, art style. They fill the boxes,\n   the Power Lora Loader and the sampler settings ONCE - then it's all yours\n   to edit (delete 'blue eyes' for a from-behind shot, swap the outfit...).\n   '✏️ Custom' character leaves the box and LoRAs alone.\n2. Power Lora Loader: switch LoRAs on/off freely. Switching one on by hand\n   adds its trigger words to the 'lora_triggers' box automatically.\n3. ✍️ scene box: pose, place, mood. Presets never touch it.\n   <lora:name:0.8> in the text also loads that LoRA.\n4. 🎛️ MODE + switches: pick what runs. All off = fast preview. Queue!\n\nLIKE A PREVIEW? Click '♻️ Use Last Queued Seed' on the Seed node, turn on\nUpscale / detailers, queue again: only the new steps run.\n\nUPSCALE FROM / INPAINT: put the image in 📂 Load Image (inpaint: right-click\nit > Open in MaskEditor, paint the area), then set MODE.\n\nPhone UI: http://<this pc>:8188/waifu/m/   LoRA guide: /waifu/loras\nPreset files: custom_nodes/comfyui-waifu-studio/presets/*.json (edit, press R)."
+   ],
+   "title": "📖 READ ME",
+   "color": "#432",
+   "bgcolor": "#653"
+  },
+  {
+   "id": 2,
+   "type": "Seed (rgthree)",
+   "pos": [
+    0,
+    470
+   ],
+   "size": [
+    440,
+    130
+   ],
+   "flags": {},
+   "order": 2,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "SEED",
+     "type": "INT",
+     "links": [
+      14
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "Seed (rgthree)"
+   },
+   "widgets_values": [
+    -1,
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "id": 3,
+   "type": "WaifuPresets",
+   "pos": [
+    0,
+    640
+   ],
+   "size": [
+    440,
+    190
+   ],
+   "flags": {},
+   "order": 3,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "WaifuPresets",
+    "waifu_managed": {
+     "model": [],
+     "style": [],
+     "character": []
+    }
+   },
+   "widgets_values": [
+    "WAI NSFW Illustrious v14",
+    "Rapi (NIKKE)",
+    "None",
+    "(default)"
+   ],
+   "title": "🎯 PRESETS (fill the fields once)",
+   "color": "#4a1f45",
+   "bgcolor": "#6b2c63"
+  },
+  {
+   "id": 4,
+   "type": "WaifuMode",
+   "pos": [
+    460,
+    30
+   ],
+   "size": [
+    400,
+    80
+   ],
+   "flags": {},
+   "order": 4,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "use_loaded_image",
+     "type": "BOOLEAN",
+     "links": [
+      1
+     ],
+     "slot_index": 0
+    },
+    {
+     "name": "inpaint",
+     "type": "BOOLEAN",
+     "links": [
+      2
+     ],
+     "slot_index": 1
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "WaifuMode"
+   },
+   "widgets_values": [
+    "Generate"
+   ],
+   "title": "🎛️ MODE",
+   "color": "#4a1f45",
+   "bgcolor": "#6b2c63"
+  },
+  {
+   "id": 5,
+   "type": "SetNode",
+   "pos": [
+    0,
+    1720
+   ],
+   "size": [
+    210,
+    58
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 5,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "BOOLEAN",
+     "type": "BOOLEAN",
+     "link": 1
+    }
+   ],
+   "outputs": [
+    {
+     "name": "*",
+     "type": "*",
+     "links": [],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "SetNode",
+    "previousName": "use_loaded"
+   },
+   "widgets_values": [
+    "use_loaded"
+   ],
+   "title": "Set_use_loaded",
+   "color": "#223",
+   "bgcolor": "#335"
+  },
+  {
+   "id": 6,
+   "type": "SetNode",
+   "pos": [
+    0,
+    1760
+   ],
+   "size": [
+    210,
+    58
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 6,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "BOOLEAN",
+     "type": "BOOLEAN",
+     "link": 2
+    }
+   ],
+   "outputs": [
+    {
+     "name": "*",
+     "type": "*",
+     "links": [],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "SetNode",
+    "previousName": "inpaint"
+   },
+   "widgets_values": [
+    "inpaint"
+   ],
+   "title": "Set_inpaint",
+   "color": "#223",
+   "bgcolor": "#335"
+  },
+  {
+   "id": 7,
+   "type": "WaifuSwitch",
+   "pos": [
+    460,
+    150
+   ],
+   "size": [
+    400,
+    58
+   ],
+   "flags": {},
+   "order": 7,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "on",
+     "type": "BOOLEAN",
+     "links": [
+      3
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "WaifuSwitch"
+   },
+   "widgets_values": [
+    false
+   ],
+   "title": "🔍 Upscale 2x",
+   "color": "#4a1f45",
+   "bgcolor": "#6b2c63"
+  },
+  {
+   "id": 8,
+   "type": "SetNode",
+   "pos": [
+    180,
+    1720
+   ],
+   "size": [
+    210,
+    58
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 8,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "BOOLEAN",
+     "type": "BOOLEAN",
+     "link": 3
+    }
+   ],
+   "outputs": [
+    {
+     "name": "*",
+     "type": "*",
+     "links": [],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "SetNode",
+    "previousName": "sw_hires"
+   },
+   "widgets_values": [
+    "sw_hires"
+   ],
+   "title": "Set_sw_hires",
+   "color": "#223",
+   "bgcolor": "#335"
+  },
+  {
+   "id": 9,
+   "type": "WaifuSwitch",
+   "pos": [
+    460,
+    250
+   ],
+   "size": [
+    400,
+    58
+   ],
+   "flags": {},
+   "order": 9,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "on",
+     "type": "BOOLEAN",
+     "links": [
+      4
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "WaifuSwitch"
+   },
+   "widgets_values": [
+    false
+   ],
+   "title": "🙂 Face Detailer",
+   "color": "#4a1f45",
+   "bgcolor": "#6b2c63"
+  },
+  {
+   "id": 10,
+   "type": "SetNode",
+   "pos": [
+    180,
+    1760
+   ],
+   "size": [
+    210,
+    58
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 10,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "BOOLEAN",
+     "type": "BOOLEAN",
+     "link": 4
+    }
+   ],
+   "outputs": [
+    {
+     "name": "*",
+     "type": "*",
+     "links": [],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "SetNode",
+    "previousName": "sw_face"
+   },
+   "widgets_values": [
+    "sw_face"
+   ],
+   "title": "Set_sw_face",
+   "color": "#223",
+   "bgcolor": "#335"
+  },
+  {
+   "id": 11,
+   "type": "WaifuSwitch",
+   "pos": [
+    460,
+    350
+   ],
+   "size": [
+    400,
+    58
+   ],
+   "flags": {},
+   "order": 11,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "on",
+     "type": "BOOLEAN",
+     "links": [
+      5
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "WaifuSwitch"
+   },
+   "widgets_values": [
+    false
+   ],
+   "title": "✋ Hand Detailer",
+   "color": "#4a1f45",
+   "bgcolor": "#6b2c63"
+  },
+  {
+   "id": 12,
+   "type": "SetNode",
+   "pos": [
+    180,
+    1800
+   ],
+   "size": [
+    210,
+    58
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 12,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "BOOLEAN",
+     "type": "BOOLEAN",
+     "link": 5
+    }
+   ],
+   "outputs": [
+    {
+     "name": "*",
+     "type": "*",
+     "links": [],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "SetNode",
+    "previousName": "sw_hands"
+   },
+   "widgets_values": [
+    "sw_hands"
+   ],
+   "title": "Set_sw_hands",
+   "color": "#223",
+   "bgcolor": "#335"
+  },
+  {
+   "id": 13,
+   "type": "WaifuSwitch",
+   "pos": [
+    460,
+    450
+   ],
+   "size": [
+    400,
+    58
+   ],
+   "flags": {},
+   "order": 13,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "on",
+     "type": "BOOLEAN",
+     "links": [
+      6
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "WaifuSwitch"
+   },
+   "widgets_values": [
+    false
+   ],
+   "title": "👄 Mouth Detailer",
+   "color": "#4a1f45",
+   "bgcolor": "#6b2c63"
+  },
+  {
+   "id": 14,
+   "type": "SetNode",
+   "pos": [
+    340,
+    1720
+   ],
+   "size": [
+    210,
+    58
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 14,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "BOOLEAN",
+     "type": "BOOLEAN",
+     "link": 6
+    }
+   ],
+   "outputs": [
+    {
+     "name": "*",
+     "type": "*",
+     "links": [],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "SetNode",
+    "previousName": "sw_mouth"
+   },
+   "widgets_values": [
+    "sw_mouth"
+   ],
+   "title": "Set_sw_mouth",
+   "color": "#223",
+   "bgcolor": "#335"
+  },
+  {
+   "id": 15,
+   "type": "WaifuSwitch",
+   "pos": [
+    460,
+    550
+   ],
+   "size": [
+    400,
+    58
+   ],
+   "flags": {},
+   "order": 15,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "on",
+     "type": "BOOLEAN",
+     "links": [
+      7
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "WaifuSwitch"
+   },
+   "widgets_values": [
+    false
+   ],
+   "title": "💎 Ultra Upscale (4x total)",
+   "color": "#4a1f45",
+   "bgcolor": "#6b2c63"
+  },
+  {
+   "id": 16,
+   "type": "SetNode",
+   "pos": [
+    340,
+    1760
+   ],
+   "size": [
+    210,
+    58
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 16,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "BOOLEAN",
+     "type": "BOOLEAN",
+     "link": 7
+    }
+   ],
+   "outputs": [
+    {
+     "name": "*",
+     "type": "*",
+     "links": [],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "SetNode",
+    "previousName": "sw_ultra"
+   },
+   "widgets_values": [
+    "sw_ultra"
+   ],
+   "title": "Set_sw_ultra",
+   "color": "#223",
+   "bgcolor": "#335"
+  },
+  {
+   "id": 17,
+   "type": "WaifuCanvas",
+   "pos": [
+    460,
+    700
+   ],
+   "size": [
+    400,
+    170
+   ],
+   "flags": {},
+   "order": 17,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "latent",
+     "type": "LATENT",
+     "links": [
+      21
+     ],
+     "slot_index": 0
+    },
+    {
+     "name": "width",
+     "type": "INT",
+     "links": [],
+     "slot_index": 1
+    },
+    {
+     "name": "height",
+     "type": "INT",
+     "links": [],
+     "slot_index": 2
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "WaifuCanvas"
+   },
+   "widgets_values": [
+    "Portrait 896x1152",
+    1,
+    896,
+    1152
+   ]
+  },
+  {
+   "id": 18,
+   "type": "WaifuLoader",
+   "pos": [
+    880,
+    30
+   ],
+   "size": [
+    540,
+    230
+   ],
+   "flags": {},
+   "order": 18,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "model",
+     "type": "MODEL",
+     "links": [
+      8
+     ],
+     "slot_index": 0
+    },
+    {
+     "name": "clip",
+     "type": "CLIP",
+     "links": [
+      9
+     ],
+     "slot_index": 1
+    },
+    {
+     "name": "vae",
+     "type": "VAE",
+     "links": [
+      12
+     ],
+     "slot_index": 2
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "WaifuLoader"
+   },
+   "widgets_values": [
+    "Checkpoint (SDXL / Illustrious)",
+    "waiNSFWIllustrious_v140.safetensors",
+    -2,
+    "Nova3DCGAMV10.safetensors",
+    "qwen_3_06b_base.safetensors",
+    "qwen_image_vae.safetensors",
+    3.0
+   ],
+   "title": "📦 Model (filled by the model preset)"
+  },
+  {
+   "id": 19,
+   "type": "Power Lora Loader (rgthree)",
+   "pos": [
+    880,
+    290
+   ],
+   "size": [
+    540,
+    580
+   ],
+   "flags": {},
+   "order": 19,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "model",
+     "type": "MODEL",
+     "link": 8
+    },
+    {
+     "name": "clip",
+     "type": "CLIP",
+     "link": 9
+    }
+   ],
+   "outputs": [
+    {
+     "name": "MODEL",
+     "type": "MODEL",
+     "links": [
+      10
+     ],
+     "slot_index": 0
+    },
+    {
+     "name": "CLIP",
+     "type": "CLIP",
+     "links": [
+      11
+     ],
+     "slot_index": 1
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "Power Lora Loader (rgthree)",
+    "Show Strengths": "Single Strength"
+   },
+   "widgets_values": [
+    {},
+    {
+     "type": "PowerLoraLoaderHeaderWidget"
+    },
+    {},
+    ""
+   ]
+  },
+  {
+   "id": 20,
+   "type": "WaifuText",
+   "pos": [
+    0,
+    920
+   ],
+   "size": [
+    860,
+    760
+   ],
+   "flags": {},
+   "order": 20,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "base_positive",
+     "type": "STRING",
+     "links": [
+      15
+     ],
+     "slot_index": 0
+    },
+    {
+     "name": "scene",
+     "type": "STRING",
+     "links": [
+      16
+     ],
+     "slot_index": 1
+    },
+    {
+     "name": "negative",
+     "type": "STRING",
+     "links": [
+      17
+     ],
+     "slot_index": 2
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "WaifuText"
+   },
+   "widgets_values": [
+    "masterpiece, best quality, amazing quality,",
+    "1girl, rapi \\(nikke\\), red eyes, brown hair, long hair, bangs, beret, black jacket, cropped jacket, red necktie, black gloves, black shirt, belt, thighhighs",
+    "",
+    "cowboy_shot, looking_at_viewer, smile,",
+    "(lowres:1.2), (worst quality:1.2), (low quality:1.2), (bad anatomy:1.2), comic, signature, watermark, logo, censored, fisheye, simple_background, photo_\\(object\\),"
+   ],
+   "title": "✍️ PROMPT (all editable)"
+  },
+  {
+   "id": 21,
+   "type": "WaifuSettings",
+   "pos": [
+    880,
+    920
+   ],
+   "size": [
+    540,
+    160
+   ],
+   "flags": {},
+   "order": 21,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "settings",
+     "type": "WAIFU_SETTINGS",
+     "links": [
+      13
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "WaifuSettings"
+   },
+   "widgets_values": [
+    30,
+    7.0,
+    "euler_ancestral",
+    "normal"
+   ],
+   "title": "⚙️ Sampler settings"
+  },
+  {
+   "id": 22,
+   "type": "WaifuEncode",
+   "pos": [
+    880,
+    1120
+   ],
+   "size": [
+    540,
+    150
+   ],
+   "flags": {},
+   "order": 22,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "model",
+     "type": "MODEL",
+     "link": 10
+    },
+    {
+     "name": "clip",
+     "type": "CLIP",
+     "link": 11
+    },
+    {
+     "name": "vae",
+     "type": "VAE",
+     "link": 12
+    },
+    {
+     "name": "settings",
+     "type": "WAIFU_SETTINGS",
+     "link": 13
+    },
+    {
+     "name": "seed",
+     "type": "INT",
+     "link": 14
+    },
+    {
+     "name": "base_positive",
+     "type": "STRING",
+     "link": 15
+    },
+    {
+     "name": "scene",
+     "type": "STRING",
+     "link": 16
+    },
+    {
+     "name": "negative",
+     "type": "STRING",
+     "link": 17
+    }
+   ],
+   "outputs": [
+    {
+     "name": "waifu",
+     "type": "WAIFU",
+     "links": [
+      19
+     ],
+     "slot_index": 0
+    },
+    {
+     "name": "final_prompt",
+     "type": "STRING",
+     "links": [
+      18
+     ],
+     "slot_index": 1
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "WaifuEncode"
+   }
+  },
+  {
+   "id": 23,
+   "type": "ShowText|pysssss",
+   "pos": [
+    880,
+    1410
+   ],
+   "size": [
+    540,
+    270
+   ],
+   "flags": {},
+   "order": 23,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "text",
+     "type": "STRING",
+     "link": 18
+    }
+   ],
+   "outputs": [
+    {
+     "name": "STRING",
+     "type": "STRING",
+     "links": [],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ShowText|pysssss"
+   },
+   "widgets_values": [
+    ""
+   ],
+   "title": "📝 Final prompt actually used"
+  },
+  {
+   "id": 24,
+   "type": "SetNode",
+   "pos": [
+    0,
+    1800
+   ],
+   "size": [
+    210,
+    58
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 24,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "WAIFU",
+     "type": "WAIFU",
+     "link": 19
+    }
+   ],
+   "outputs": [
+    {
+     "name": "*",
+     "type": "*",
+     "links": [],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "SetNode",
+    "previousName": "waifu"
+   },
+   "widgets_values": [
+    "waifu"
+   ],
+   "title": "Set_waifu",
+   "color": "#223",
+   "bgcolor": "#335"
+  },
+  {
+   "id": 25,
+   "type": "GetNode",
+   "pos": [
+    1520,
+    20
+   ],
+   "size": [
+    210,
+    58
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 25,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "WAIFU",
+     "type": "WAIFU",
+     "links": [
+      20
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "GetNode"
+   },
+   "widgets_values": [
+    "waifu"
+   ],
+   "title": "Get_waifu",
+   "color": "#223",
+   "bgcolor": "#335"
+  },
+  {
+   "id": 26,
+   "type": "WaifuSampler",
+   "pos": [
+    1520,
+    70
+   ],
+   "size": [
+    300,
+    80
+   ],
+   "flags": {},
+   "order": 26,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "waifu",
+     "type": "WAIFU",
+     "link": 20
+    },
+    {
+     "name": "latent",
+     "type": "LATENT",
+     "link": 21
+    }
+   ],
+   "outputs": [
+    {
+     "name": "image",
+     "type": "IMAGE",
+     "links": [
+      23
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "WaifuSampler"
+   }
+  },
+  {
+   "id": 27,
+   "type": "LoadImage",
+   "pos": [
+    1520,
+    240
+   ],
+   "size": [
+    300,
+    420
+   ],
+   "flags": {},
+   "order": 27,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      24
+     ],
+     "slot_index": 0
+    },
+    {
+     "name": "MASK",
+     "type": "MASK",
+     "links": [
+      30
+     ],
+     "slot_index": 1
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "LoadImage"
+   },
+   "widgets_values": [
+    "example.png",
+    "image"
+   ],
+   "title": "📂 Load Image (Upscale From / Inpaint)"
+  },
+  {
+   "id": 28,
+   "type": "GetNode",
+   "pos": [
+    1520,
+    880
+   ],
+   "size": [
+    210,
+    58
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 28,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "BOOLEAN",
+     "type": "BOOLEAN",
+     "links": [
+      22
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "GetNode"
+   },
+   "widgets_values": [
+    "use_loaded"
+   ],
+   "title": "Get_use_loaded",
+   "color": "#223",
+   "bgcolor": "#335"
+  },
+  {
+   "id": 29,
+   "type": "WaifuGate",
+   "pos": [
+    1520,
+    900
+   ],
+   "size": [
+    300,
+    100
+   ],
+   "flags": {},
+   "order": 29,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "enabled",
+     "type": "BOOLEAN",
+     "link": 22
+    },
+    {
+     "name": "off",
+     "type": "IMAGE",
+     "link": 23
+    },
+    {
+     "name": "on",
+     "type": "IMAGE",
+     "link": 25
+    }
+   ],
+   "outputs": [
+    {
+     "name": "image",
+     "type": "IMAGE",
+     "links": [
+      26,
+      29,
+      33,
+      35,
+      106
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "WaifuGate"
+   },
+   "title": "🚦 Source: generated or loaded"
+  },
+  {
+   "id": 30,
+   "type": "ImageScaleToTotalPixels",
+   "pos": [
+    1520,
+    700
+   ],
+   "size": [
+    300,
+    106
+   ],
+   "flags": {},
+   "order": 30,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "image",
+     "type": "IMAGE",
+     "link": 24
+    }
+   ],
+   "outputs": [
+    {
+     "name": "IMAGE",
+     "type": "IMAGE",
+     "links": [
+      25
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "ImageScaleToTotalPixels"
+   },
+   "widgets_values": [
+    "lanczos",
+    1.0,
+    8
+   ],
+   "title": "📐 Scale to Total Pixels (Upscale From only - bypass with Ctrl+B)",
+   "color": "#4a1f45",
+   "bgcolor": "#6b2c63"
+  },
+  {
+   "id": 31,
+   "type": "PreviewImage",
+   "pos": [
+    1840,
+    30
+   ],
+   "size": [
+    640,
+    860
+   ],
+   "flags": {},
+   "order": 31,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "link": 26
+    }
+   ],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "PreviewImage"
+   },
+   "title": "👀 PREVIEW (base image)"
+  },
+  {
+   "id": 32,
+   "type": "Note",
+   "pos": [
+    1520,
+    1040
+   ],
+   "size": [
+    960,
+    180
+   ],
+   "flags": {},
+   "order": 32,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "Note"
+   },
+   "widgets_values": [
+    "Generate mode: the sampler makes the image from your prompt.\nUpscale From / Inpaint mode: the 📂 Load Image box is used instead and the sampler is skipped.\nInpaint: right-click the Load Image node > 'Open in MaskEditor', paint what to change, save, and describe the change in the Prompt box."
+   ],
+   "title": "ℹ️ source",
+   "color": "#432",
+   "bgcolor": "#653"
+  },
+  {
+   "id": 33,
+   "type": "GetNode",
+   "pos": [
+    2580,
+    10
+   ],
+   "size": [
+    210,
+    58
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 33,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "WAIFU",
+     "type": "WAIFU",
+     "links": [
+      27
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "GetNode"
+   },
+   "widgets_values": [
+    "waifu"
+   ],
+   "title": "Get_waifu",
+   "color": "#223",
+   "bgcolor": "#335"
+  },
+  {
+   "id": 34,
+   "type": "GetNode",
+   "pos": [
+    2580,
+    50
+   ],
+   "size": [
+    210,
+    58
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 34,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "BOOLEAN",
+     "type": "BOOLEAN",
+     "links": [
+      32
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "GetNode"
+   },
+   "widgets_values": [
+    "inpaint"
+   ],
+   "title": "Get_inpaint",
+   "color": "#223",
+   "bgcolor": "#335"
+  },
+  {
+   "id": 35,
+   "type": "WaifuInpaintPrompt",
+   "pos": [
+    2930,
+    0
+   ],
+   "size": [
+    590,
+    460
+   ],
+   "flags": {},
+   "order": 35,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "waifu",
+     "type": "WAIFU",
+     "link": 27
+    },
+    {
+     "name": "positive",
+     "type": "STRING",
+     "link": null,
+     "widget": {
+      "name": "positive"
+     }
+    },
+    {
+     "name": "negative",
+     "type": "STRING",
+     "link": null,
+     "widget": {
+      "name": "negative"
+     }
+    }
+   ],
+   "outputs": [
+    {
+     "name": "waifu",
+     "type": "WAIFU",
+     "links": [
+      28
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "WaifuInpaintPrompt"
+   },
+   "widgets_values": [
+    "",
+    ""
+   ],
+   "title": "🖌️ INPAINT PROMPT (copy of main prompt - edit freely)",
+   "color": "#4a1f45",
+   "bgcolor": "#6b2c63"
+  },
+  {
+   "id": 36,
+   "type": "WaifuUnpack",
+   "pos": [
+    2580,
+    270
+   ],
+   "size": [
+    330,
+    170
+   ],
+   "flags": {},
+   "order": 36,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "waifu",
+     "type": "WAIFU",
+     "link": 28
+    }
+   ],
+   "outputs": [
+    {
+     "name": "model",
+     "type": "MODEL",
+     "links": [],
+     "slot_index": 0
+    },
+    {
+     "name": "clip",
+     "type": "CLIP",
+     "links": [],
+     "slot_index": 1
+    },
+    {
+     "name": "vae",
+     "type": "VAE",
+     "links": [],
+     "slot_index": 2
+    },
+    {
+     "name": "positive",
+     "type": "CONDITIONING",
+     "links": [],
+     "slot_index": 3
+    },
+    {
+     "name": "negative",
+     "type": "CONDITIONING",
+     "links": [],
+     "slot_index": 4
+    },
+    {
+     "name": "basic_pipe",
+     "type": "BASIC_PIPE",
+     "links": [
+      31
+     ],
+     "slot_index": 5
+    },
+    {
+     "name": "seed",
+     "type": "INT",
+     "links": [],
+     "slot_index": 6
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "WaifuUnpack"
+   }
+  },
+  {
+   "id": 37,
+   "type": "MaskDetailerPipe",
+   "pos": [
+    2580,
+    480
+   ],
+   "size": [
+    330,
+    640
+   ],
+   "flags": {},
+   "order": 37,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "image",
+     "type": "IMAGE",
+     "link": 29
+    },
+    {
+     "name": "mask",
+     "type": "MASK",
+     "link": 30
+    },
+    {
+     "name": "basic_pipe",
+     "type": "BASIC_PIPE",
+     "link": 31
+    },
+    {
+     "name": "refiner_basic_pipe_opt",
+     "type": "BASIC_PIPE",
+     "link": null
+    },
+    {
+     "name": "detailer_hook",
+     "type": "DETAILER_HOOK",
+     "link": null
+    },
+    {
+     "name": "scheduler_func_opt",
+     "type": "SCHEDULER_FUNC",
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "name": "image",
+     "type": "IMAGE",
+     "links": [
+      34
+     ],
+     "slot_index": 0
+    },
+    {
+     "name": "cropped_refined",
+     "type": "IMAGE",
+     "links": [],
+     "slot_index": 1
+    },
+    {
+     "name": "cropped_enhanced_alpha",
+     "type": "IMAGE",
+     "links": [],
+     "slot_index": 2
+    },
+    {
+     "name": "basic_pipe",
+     "type": "BASIC_PIPE",
+     "links": [],
+     "slot_index": 3
+    },
+    {
+     "name": "refiner_basic_pipe_opt",
+     "type": "BASIC_PIPE",
+     "links": [],
+     "slot_index": 4
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "MaskDetailerPipe"
+   },
+   "widgets_values": [
+    1024,
+    true,
+    1024,
+    true,
+    0,
+    "randomize",
+    28,
+    6.0,
+    "euler_ancestral",
+    "normal",
+    0.6,
+    8,
+    3.0,
+    10,
+    0.2,
+    1,
+    1,
+    false,
+    20,
+    false,
+    true
+   ],
+   "title": "🖌️ Inpaint (masked area, crop & stitch)"
+  },
+  {
+   "id": 38,
+   "type": "WaifuGate",
+   "pos": [
+    2580,
+    1240
+   ],
+   "size": [
+    330,
+    100
+   ],
+   "flags": {},
+   "order": 38,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "enabled",
+     "type": "BOOLEAN",
+     "link": 32
+    },
+    {
+     "name": "off",
+     "type": "IMAGE",
+     "link": 33
+    },
+    {
+     "name": "on",
+     "type": "IMAGE",
+     "link": 34
+    }
+   ],
+   "outputs": [
+    {
+     "name": "image",
+     "type": "IMAGE",
+     "links": [
+      36,
+      40,
+      42,
+      44
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "WaifuGate"
+   },
+   "title": "🚦 inpaint"
+  },
+  {
+   "id": 39,
+   "type": "WaifuCompareGuard",
+   "pos": [
+    2580,
+    1200
+   ],
+   "size": [
+    330,
+    80
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 39,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "before",
+     "type": "IMAGE",
+     "link": 35
+    },
+    {
+     "name": "after",
+     "type": "IMAGE",
+     "link": 36
+    }
+   ],
+   "outputs": [
+    {
+     "name": "before",
+     "type": "IMAGE",
+     "links": [
+      37
+     ],
+     "slot_index": 0
+    },
+    {
+     "name": "after",
+     "type": "IMAGE",
+     "links": [
+      38
+     ],
+     "slot_index": 1
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "WaifuCompareGuard"
+   }
+  },
+  {
+   "id": 40,
+   "type": "Image Comparer (rgthree)",
+   "pos": [
+    2930,
+    480
+   ],
+   "size": [
+    590,
+    820
+   ],
+   "flags": {},
+   "order": 40,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "image_a",
+     "type": "IMAGE",
+     "link": 37
+    },
+    {
+     "name": "image_b",
+     "type": "IMAGE",
+     "link": 38
+    }
+   ],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "Image Comparer (rgthree)",
+    "comparer_mode": "Slide"
+   },
+   "widgets_values": [],
+   "title": "🔀 before / after - inpaint"
+  },
+  {
+   "id": 41,
+   "type": "Note",
+   "pos": [
+    2580,
+    90
+   ],
+   "size": [
+    330,
+    140
+   ],
+   "flags": {},
+   "order": 41,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "Note"
+   },
+   "widgets_values": [
+    "Repaints only the masked part.\nThe 🖌️ INPAINT PROMPT box starts as a copy of your main prompt: edit it (e.g. 'yellow necktie') - it stops following the main prompt once you edit it. ↻ re-copies. Empty = main prompt.\nDenoise 0.6 default, 0.4 = small fix. Seed changes every run."
+   ],
+   "title": "ℹ️",
+   "color": "#432",
+   "bgcolor": "#653"
+  },
+  {
+   "id": 42,
+   "type": "GetNode",
+   "pos": [
+    3600,
+    10
+   ],
+   "size": [
+    210,
+    58
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 42,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "WAIFU",
+     "type": "WAIFU",
+     "links": [
+      39
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "GetNode"
+   },
+   "widgets_values": [
+    "waifu"
+   ],
+   "title": "Get_waifu",
+   "color": "#223",
+   "bgcolor": "#335"
+  },
+  {
+   "id": 43,
+   "type": "GetNode",
+   "pos": [
+    3600,
+    50
+   ],
+   "size": [
+    210,
+    58
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 43,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "BOOLEAN",
+     "type": "BOOLEAN",
+     "links": [
+      41
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "GetNode"
+   },
+   "widgets_values": [
+    "sw_hires"
+   ],
+   "title": "Get_sw_hires",
+   "color": "#223",
+   "bgcolor": "#335"
+  },
+  {
+   "id": 44,
+   "type": "WaifuHiRes",
+   "pos": [
+    3600,
+    270
+   ],
+   "size": [
+    330,
+    300
+   ],
+   "flags": {},
+   "order": 44,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "waifu",
+     "type": "WAIFU",
+     "link": 39
+    },
+    {
+     "name": "image",
+     "type": "IMAGE",
+     "link": 40
+    }
+   ],
+   "outputs": [
+    {
+     "name": "image",
+     "type": "IMAGE",
+     "links": [
+      43
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "WaifuHiRes"
+   },
+   "widgets_values": [
+    "2x-AnimeSharpV4_RCAN.safetensors",
+    2.0,
+    0.3,
+    20,
+    0.0,
+    "full image",
+    1024,
+    1
+   ],
+   "title": "🔍 Upscale 2x + 2nd pass"
+  },
+  {
+   "id": 45,
+   "type": "WaifuGate",
+   "pos": [
+    3600,
+    1240
+   ],
+   "size": [
+    330,
+    100
+   ],
+   "flags": {},
+   "order": 45,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "enabled",
+     "type": "BOOLEAN",
+     "link": 41
+    },
+    {
+     "name": "off",
+     "type": "IMAGE",
+     "link": 42
+    },
+    {
+     "name": "on",
+     "type": "IMAGE",
+     "link": 43
+    }
+   ],
+   "outputs": [
+    {
+     "name": "image",
+     "type": "IMAGE",
+     "links": [
+      45,
+      49,
+      58,
+      60
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "WaifuGate"
+   },
+   "title": "🚦 hires"
+  },
+  {
+   "id": 46,
+   "type": "WaifuCompareGuard",
+   "pos": [
+    3600,
+    1200
+   ],
+   "size": [
+    330,
+    80
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 46,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "before",
+     "type": "IMAGE",
+     "link": 44
+    },
+    {
+     "name": "after",
+     "type": "IMAGE",
+     "link": 45
+    }
+   ],
+   "outputs": [
+    {
+     "name": "before",
+     "type": "IMAGE",
+     "links": [
+      46
+     ],
+     "slot_index": 0
+    },
+    {
+     "name": "after",
+     "type": "IMAGE",
+     "links": [
+      47
+     ],
+     "slot_index": 1
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "WaifuCompareGuard"
+   }
+  },
+  {
+   "id": 47,
+   "type": "Image Comparer (rgthree)",
+   "pos": [
+    3950,
+    0
+   ],
+   "size": [
+    590,
+    1360
+   ],
+   "flags": {},
+   "order": 47,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "image_a",
+     "type": "IMAGE",
+     "link": 46
+    },
+    {
+     "name": "image_b",
+     "type": "IMAGE",
+     "link": 47
+    }
+   ],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "Image Comparer (rgthree)",
+    "comparer_mode": "Slide"
+   },
+   "widgets_values": [],
+   "title": "🔀 before / after - hires"
+  },
+  {
+   "id": 48,
+   "type": "Note",
+   "pos": [
+    3600,
+    90
+   ],
+   "size": [
+    330,
+    140
+   ],
+   "flags": {},
+   "order": 48,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "Note"
+   },
+   "widgets_values": [
+    "2x upscale with a second sampler pass.\nDenoise is filled by the model preset (0.3).\nUpscaler: AnimeSharpV4 (anime-tuned)."
+   ],
+   "title": "ℹ️",
+   "color": "#432",
+   "bgcolor": "#653"
+  },
+  {
+   "id": 49,
+   "type": "GetNode",
+   "pos": [
+    4620,
+    10
+   ],
+   "size": [
+    210,
+    58
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 49,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "WAIFU",
+     "type": "WAIFU",
+     "links": [
+      48
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "GetNode"
+   },
+   "widgets_values": [
+    "waifu"
+   ],
+   "title": "Get_waifu",
+   "color": "#223",
+   "bgcolor": "#335"
+  },
+  {
+   "id": 50,
+   "type": "GetNode",
+   "pos": [
+    4620,
+    50
+   ],
+   "size": [
+    210,
+    58
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 50,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "BOOLEAN",
+     "type": "BOOLEAN",
+     "links": [
+      57
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "GetNode"
+   },
+   "widgets_values": [
+    "sw_face"
+   ],
+   "title": "Get_sw_face",
+   "color": "#223",
+   "bgcolor": "#335"
+  },
+  {
+   "id": 51,
+   "type": "UltralyticsDetectorProvider",
+   "pos": [
+    4620,
+    270
+   ],
+   "size": [
+    330,
+    80
+   ],
+   "flags": {},
+   "order": 51,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "BBOX_DETECTOR",
+     "type": "BBOX_DETECTOR",
+     "links": [
+      55
+     ],
+     "slot_index": 0
+    },
+    {
+     "name": "SEGM_DETECTOR",
+     "type": "SEGM_DETECTOR",
+     "links": [
+      56
+     ],
+     "slot_index": 1
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "UltralyticsDetectorProvider"
+   },
+   "widgets_values": [
+    "segm/99coins_anime_girl_face_m_seg.pt"
+   ]
+  },
+  {
+   "id": 52,
+   "type": "WaifuUnpack",
+   "pos": [
+    4620,
+    390
+   ],
+   "size": [
+    330,
+    170
+   ],
+   "flags": {},
+   "order": 52,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "waifu",
+     "type": "WAIFU",
+     "link": 48
+    }
+   ],
+   "outputs": [
+    {
+     "name": "model",
+     "type": "MODEL",
+     "links": [
+      50
+     ],
+     "slot_index": 0
+    },
+    {
+     "name": "clip",
+     "type": "CLIP",
+     "links": [
+      51
+     ],
+     "slot_index": 1
+    },
+    {
+     "name": "vae",
+     "type": "VAE",
+     "links": [
+      52
+     ],
+     "slot_index": 2
+    },
+    {
+     "name": "positive",
+     "type": "CONDITIONING",
+     "links": [
+      53
+     ],
+     "slot_index": 3
+    },
+    {
+     "name": "negative",
+     "type": "CONDITIONING",
+     "links": [
+      54
+     ],
+     "slot_index": 4
+    },
+    {
+     "name": "basic_pipe",
+     "type": "BASIC_PIPE",
+     "links": [],
+     "slot_index": 5
+    },
+    {
+     "name": "seed",
+     "type": "INT",
+     "links": [],
+     "slot_index": 6
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "WaifuUnpack"
+   }
+  },
+  {
+   "id": 53,
+   "type": "FaceDetailer",
+   "pos": [
+    4620,
+    600
+   ],
+   "size": [
+    330,
+    300
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 53,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "image",
+     "type": "IMAGE",
+     "link": 49
+    },
+    {
+     "name": "model",
+     "type": "MODEL",
+     "link": 50
+    },
+    {
+     "name": "clip",
+     "type": "CLIP",
+     "link": 51
+    },
+    {
+     "name": "vae",
+     "type": "VAE",
+     "link": 52
+    },
+    {
+     "name": "positive",
+     "type": "CONDITIONING",
+     "link": 53
+    },
+    {
+     "name": "negative",
+     "type": "CONDITIONING",
+     "link": 54
+    },
+    {
+     "name": "bbox_detector",
+     "type": "BBOX_DETECTOR",
+     "link": 55
+    },
+    {
+     "name": "sam_model_opt",
+     "type": "SAM_MODEL",
+     "link": null
+    },
+    {
+     "name": "segm_detector_opt",
+     "type": "SEGM_DETECTOR",
+     "link": 56
+    },
+    {
+     "name": "detailer_hook",
+     "type": "DETAILER_HOOK",
+     "link": null
+    },
+    {
+     "name": "scheduler_func_opt",
+     "type": "SCHEDULER_FUNC",
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "name": "image",
+     "type": "IMAGE",
+     "links": [
+      59
+     ],
+     "slot_index": 0
+    },
+    {
+     "name": "cropped_refined",
+     "type": "IMAGE",
+     "links": [],
+     "slot_index": 1
+    },
+    {
+     "name": "cropped_enhanced_alpha",
+     "type": "IMAGE",
+     "links": [],
+     "slot_index": 2
+    },
+    {
+     "name": "mask",
+     "type": "MASK",
+     "links": [],
+     "slot_index": 3
+    },
+    {
+     "name": "detailer_pipe",
+     "type": "DETAILER_PIPE",
+     "links": [],
+     "slot_index": 4
+    },
+    {
+     "name": "cnet_images",
+     "type": "IMAGE",
+     "links": [],
+     "slot_index": 5
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "FaceDetailer"
+   },
+   "widgets_values": [
+    1024,
+    true,
+    1024,
+    0,
+    "fixed",
+    20,
+    7.0,
+    "euler_ancestral",
+    "simple",
+    0.4,
+    5,
+    true,
+    true,
+    0.5,
+    10,
+    3.0,
+    "center-1",
+    0,
+    0.93,
+    0,
+    0.7,
+    "False",
+    10,
+    "",
+    1,
+    false,
+    20,
+    false,
+    false
+   ],
+   "title": "FaceDetailer (face)"
+  },
+  {
+   "id": 54,
+   "type": "WaifuGate",
+   "pos": [
+    4620,
+    1240
+   ],
+   "size": [
+    330,
+    100
+   ],
+   "flags": {},
+   "order": 54,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "enabled",
+     "type": "BOOLEAN",
+     "link": 57
+    },
+    {
+     "name": "off",
+     "type": "IMAGE",
+     "link": 58
+    },
+    {
+     "name": "on",
+     "type": "IMAGE",
+     "link": 59
+    }
+   ],
+   "outputs": [
+    {
+     "name": "image",
+     "type": "IMAGE",
+     "links": [
+      61,
+      65,
+      74,
+      76
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "WaifuGate"
+   },
+   "title": "🚦 face"
+  },
+  {
+   "id": 55,
+   "type": "WaifuCompareGuard",
+   "pos": [
+    4620,
+    1200
+   ],
+   "size": [
+    330,
+    80
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 55,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "before",
+     "type": "IMAGE",
+     "link": 60
+    },
+    {
+     "name": "after",
+     "type": "IMAGE",
+     "link": 61
+    }
+   ],
+   "outputs": [
+    {
+     "name": "before",
+     "type": "IMAGE",
+     "links": [
+      62
+     ],
+     "slot_index": 0
+    },
+    {
+     "name": "after",
+     "type": "IMAGE",
+     "links": [
+      63
+     ],
+     "slot_index": 1
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "WaifuCompareGuard"
+   }
+  },
+  {
+   "id": 56,
+   "type": "Image Comparer (rgthree)",
+   "pos": [
+    4970,
+    0
+   ],
+   "size": [
+    590,
+    1360
+   ],
+   "flags": {},
+   "order": 56,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "image_a",
+     "type": "IMAGE",
+     "link": 62
+    },
+    {
+     "name": "image_b",
+     "type": "IMAGE",
+     "link": 63
+    }
+   ],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "Image Comparer (rgthree)",
+    "comparer_mode": "Slide"
+   },
+   "widgets_values": [],
+   "title": "🔀 before / after - face"
+  },
+  {
+   "id": 57,
+   "type": "GetNode",
+   "pos": [
+    2580,
+    1490
+   ],
+   "size": [
+    210,
+    58
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 57,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "WAIFU",
+     "type": "WAIFU",
+     "links": [
+      64
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "GetNode"
+   },
+   "widgets_values": [
+    "waifu"
+   ],
+   "title": "Get_waifu",
+   "color": "#223",
+   "bgcolor": "#335"
+  },
+  {
+   "id": 58,
+   "type": "GetNode",
+   "pos": [
+    2580,
+    1530
+   ],
+   "size": [
+    210,
+    58
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 58,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "BOOLEAN",
+     "type": "BOOLEAN",
+     "links": [
+      73
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "GetNode"
+   },
+   "widgets_values": [
+    "sw_hands"
+   ],
+   "title": "Get_sw_hands",
+   "color": "#223",
+   "bgcolor": "#335"
+  },
+  {
+   "id": 59,
+   "type": "UltralyticsDetectorProvider",
+   "pos": [
+    2580,
+    1750
+   ],
+   "size": [
+    330,
+    80
+   ],
+   "flags": {},
+   "order": 59,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "BBOX_DETECTOR",
+     "type": "BBOX_DETECTOR",
+     "links": [
+      71
+     ],
+     "slot_index": 0
+    },
+    {
+     "name": "SEGM_DETECTOR",
+     "type": "SEGM_DETECTOR",
+     "links": [
+      72
+     ],
+     "slot_index": 1
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "UltralyticsDetectorProvider"
+   },
+   "widgets_values": [
+    "segm/PitHandDetailer-v2-Test-v9c.pt"
+   ]
+  },
+  {
+   "id": 60,
+   "type": "WaifuUnpack",
+   "pos": [
+    2580,
+    1870
+   ],
+   "size": [
+    330,
+    170
+   ],
+   "flags": {},
+   "order": 60,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "waifu",
+     "type": "WAIFU",
+     "link": 64
+    }
+   ],
+   "outputs": [
+    {
+     "name": "model",
+     "type": "MODEL",
+     "links": [
+      66
+     ],
+     "slot_index": 0
+    },
+    {
+     "name": "clip",
+     "type": "CLIP",
+     "links": [
+      67
+     ],
+     "slot_index": 1
+    },
+    {
+     "name": "vae",
+     "type": "VAE",
+     "links": [
+      68
+     ],
+     "slot_index": 2
+    },
+    {
+     "name": "positive",
+     "type": "CONDITIONING",
+     "links": [
+      69
+     ],
+     "slot_index": 3
+    },
+    {
+     "name": "negative",
+     "type": "CONDITIONING",
+     "links": [
+      70
+     ],
+     "slot_index": 4
+    },
+    {
+     "name": "basic_pipe",
+     "type": "BASIC_PIPE",
+     "links": [],
+     "slot_index": 5
+    },
+    {
+     "name": "seed",
+     "type": "INT",
+     "links": [],
+     "slot_index": 6
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "WaifuUnpack"
+   }
+  },
+  {
+   "id": 61,
+   "type": "FaceDetailer",
+   "pos": [
+    2580,
+    2080
+   ],
+   "size": [
+    330,
+    300
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 61,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "image",
+     "type": "IMAGE",
+     "link": 65
+    },
+    {
+     "name": "model",
+     "type": "MODEL",
+     "link": 66
+    },
+    {
+     "name": "clip",
+     "type": "CLIP",
+     "link": 67
+    },
+    {
+     "name": "vae",
+     "type": "VAE",
+     "link": 68
+    },
+    {
+     "name": "positive",
+     "type": "CONDITIONING",
+     "link": 69
+    },
+    {
+     "name": "negative",
+     "type": "CONDITIONING",
+     "link": 70
+    },
+    {
+     "name": "bbox_detector",
+     "type": "BBOX_DETECTOR",
+     "link": 71
+    },
+    {
+     "name": "sam_model_opt",
+     "type": "SAM_MODEL",
+     "link": null
+    },
+    {
+     "name": "segm_detector_opt",
+     "type": "SEGM_DETECTOR",
+     "link": 72
+    },
+    {
+     "name": "detailer_hook",
+     "type": "DETAILER_HOOK",
+     "link": null
+    },
+    {
+     "name": "scheduler_func_opt",
+     "type": "SCHEDULER_FUNC",
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "name": "image",
+     "type": "IMAGE",
+     "links": [
+      75
+     ],
+     "slot_index": 0
+    },
+    {
+     "name": "cropped_refined",
+     "type": "IMAGE",
+     "links": [],
+     "slot_index": 1
+    },
+    {
+     "name": "cropped_enhanced_alpha",
+     "type": "IMAGE",
+     "links": [],
+     "slot_index": 2
+    },
+    {
+     "name": "mask",
+     "type": "MASK",
+     "links": [],
+     "slot_index": 3
+    },
+    {
+     "name": "detailer_pipe",
+     "type": "DETAILER_PIPE",
+     "links": [],
+     "slot_index": 4
+    },
+    {
+     "name": "cnet_images",
+     "type": "IMAGE",
+     "links": [],
+     "slot_index": 5
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "FaceDetailer"
+   },
+   "widgets_values": [
+    768,
+    true,
+    1024,
+    0,
+    "fixed",
+    20,
+    7.0,
+    "euler_ancestral",
+    "simple",
+    0.4,
+    5,
+    true,
+    true,
+    0.4,
+    10,
+    3.0,
+    "center-1",
+    0,
+    0.93,
+    0,
+    0.7,
+    "False",
+    10,
+    "",
+    1,
+    false,
+    20,
+    false,
+    false
+   ],
+   "title": "FaceDetailer (hands)"
+  },
+  {
+   "id": 62,
+   "type": "WaifuGate",
+   "pos": [
+    2580,
+    2720
+   ],
+   "size": [
+    330,
+    100
+   ],
+   "flags": {},
+   "order": 62,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "enabled",
+     "type": "BOOLEAN",
+     "link": 73
+    },
+    {
+     "name": "off",
+     "type": "IMAGE",
+     "link": 74
+    },
+    {
+     "name": "on",
+     "type": "IMAGE",
+     "link": 75
+    }
+   ],
+   "outputs": [
+    {
+     "name": "image",
+     "type": "IMAGE",
+     "links": [
+      77,
+      81,
+      90,
+      92
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "WaifuGate"
+   },
+   "title": "🚦 hands"
+  },
+  {
+   "id": 63,
+   "type": "WaifuCompareGuard",
+   "pos": [
+    2580,
+    2680
+   ],
+   "size": [
+    330,
+    80
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 63,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "before",
+     "type": "IMAGE",
+     "link": 76
+    },
+    {
+     "name": "after",
+     "type": "IMAGE",
+     "link": 77
+    }
+   ],
+   "outputs": [
+    {
+     "name": "before",
+     "type": "IMAGE",
+     "links": [
+      78
+     ],
+     "slot_index": 0
+    },
+    {
+     "name": "after",
+     "type": "IMAGE",
+     "links": [
+      79
+     ],
+     "slot_index": 1
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "WaifuCompareGuard"
+   }
+  },
+  {
+   "id": 64,
+   "type": "Image Comparer (rgthree)",
+   "pos": [
+    2930,
+    1480
+   ],
+   "size": [
+    590,
+    1360
+   ],
+   "flags": {},
+   "order": 64,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "image_a",
+     "type": "IMAGE",
+     "link": 78
+    },
+    {
+     "name": "image_b",
+     "type": "IMAGE",
+     "link": 79
+    }
+   ],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "Image Comparer (rgthree)",
+    "comparer_mode": "Slide"
+   },
+   "widgets_values": [],
+   "title": "🔀 before / after - hands"
+  },
+  {
+   "id": 65,
+   "type": "GetNode",
+   "pos": [
+    3600,
+    1490
+   ],
+   "size": [
+    210,
+    58
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 65,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "WAIFU",
+     "type": "WAIFU",
+     "links": [
+      80
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "GetNode"
+   },
+   "widgets_values": [
+    "waifu"
+   ],
+   "title": "Get_waifu",
+   "color": "#223",
+   "bgcolor": "#335"
+  },
+  {
+   "id": 66,
+   "type": "GetNode",
+   "pos": [
+    3600,
+    1530
+   ],
+   "size": [
+    210,
+    58
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 66,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "BOOLEAN",
+     "type": "BOOLEAN",
+     "links": [
+      89
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "GetNode"
+   },
+   "widgets_values": [
+    "sw_mouth"
+   ],
+   "title": "Get_sw_mouth",
+   "color": "#223",
+   "bgcolor": "#335"
+  },
+  {
+   "id": 67,
+   "type": "UltralyticsDetectorProvider",
+   "pos": [
+    3600,
+    1750
+   ],
+   "size": [
+    330,
+    80
+   ],
+   "flags": {},
+   "order": 67,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "BBOX_DETECTOR",
+     "type": "BBOX_DETECTOR",
+     "links": [
+      87
+     ],
+     "slot_index": 0
+    },
+    {
+     "name": "SEGM_DETECTOR",
+     "type": "SEGM_DETECTOR",
+     "links": [
+      88
+     ],
+     "slot_index": 1
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "UltralyticsDetectorProvider"
+   },
+   "widgets_values": [
+    "segm/adetailer2dMouth_v10.pt"
+   ]
+  },
+  {
+   "id": 68,
+   "type": "WaifuUnpack",
+   "pos": [
+    3600,
+    1870
+   ],
+   "size": [
+    330,
+    170
+   ],
+   "flags": {},
+   "order": 68,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "waifu",
+     "type": "WAIFU",
+     "link": 80
+    }
+   ],
+   "outputs": [
+    {
+     "name": "model",
+     "type": "MODEL",
+     "links": [
+      82
+     ],
+     "slot_index": 0
+    },
+    {
+     "name": "clip",
+     "type": "CLIP",
+     "links": [
+      83
+     ],
+     "slot_index": 1
+    },
+    {
+     "name": "vae",
+     "type": "VAE",
+     "links": [
+      84
+     ],
+     "slot_index": 2
+    },
+    {
+     "name": "positive",
+     "type": "CONDITIONING",
+     "links": [
+      85
+     ],
+     "slot_index": 3
+    },
+    {
+     "name": "negative",
+     "type": "CONDITIONING",
+     "links": [
+      86
+     ],
+     "slot_index": 4
+    },
+    {
+     "name": "basic_pipe",
+     "type": "BASIC_PIPE",
+     "links": [],
+     "slot_index": 5
+    },
+    {
+     "name": "seed",
+     "type": "INT",
+     "links": [],
+     "slot_index": 6
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "WaifuUnpack"
+   }
+  },
+  {
+   "id": 69,
+   "type": "FaceDetailer",
+   "pos": [
+    3600,
+    2080
+   ],
+   "size": [
+    330,
+    300
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 69,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "image",
+     "type": "IMAGE",
+     "link": 81
+    },
+    {
+     "name": "model",
+     "type": "MODEL",
+     "link": 82
+    },
+    {
+     "name": "clip",
+     "type": "CLIP",
+     "link": 83
+    },
+    {
+     "name": "vae",
+     "type": "VAE",
+     "link": 84
+    },
+    {
+     "name": "positive",
+     "type": "CONDITIONING",
+     "link": 85
+    },
+    {
+     "name": "negative",
+     "type": "CONDITIONING",
+     "link": 86
+    },
+    {
+     "name": "bbox_detector",
+     "type": "BBOX_DETECTOR",
+     "link": 87
+    },
+    {
+     "name": "sam_model_opt",
+     "type": "SAM_MODEL",
+     "link": null
+    },
+    {
+     "name": "segm_detector_opt",
+     "type": "SEGM_DETECTOR",
+     "link": 88
+    },
+    {
+     "name": "detailer_hook",
+     "type": "DETAILER_HOOK",
+     "link": null
+    },
+    {
+     "name": "scheduler_func_opt",
+     "type": "SCHEDULER_FUNC",
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "name": "image",
+     "type": "IMAGE",
+     "links": [
+      91
+     ],
+     "slot_index": 0
+    },
+    {
+     "name": "cropped_refined",
+     "type": "IMAGE",
+     "links": [],
+     "slot_index": 1
+    },
+    {
+     "name": "cropped_enhanced_alpha",
+     "type": "IMAGE",
+     "links": [],
+     "slot_index": 2
+    },
+    {
+     "name": "mask",
+     "type": "MASK",
+     "links": [],
+     "slot_index": 3
+    },
+    {
+     "name": "detailer_pipe",
+     "type": "DETAILER_PIPE",
+     "links": [],
+     "slot_index": 4
+    },
+    {
+     "name": "cnet_images",
+     "type": "IMAGE",
+     "links": [],
+     "slot_index": 5
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "FaceDetailer"
+   },
+   "widgets_values": [
+    512,
+    true,
+    768,
+    0,
+    "fixed",
+    20,
+    7.0,
+    "euler_ancestral",
+    "simple",
+    0.35,
+    5,
+    true,
+    true,
+    0.5,
+    10,
+    4.0,
+    "center-1",
+    0,
+    0.93,
+    0,
+    0.7,
+    "False",
+    10,
+    "",
+    1,
+    false,
+    20,
+    false,
+    false
+   ],
+   "title": "FaceDetailer (mouth)"
+  },
+  {
+   "id": 70,
+   "type": "WaifuGate",
+   "pos": [
+    3600,
+    2720
+   ],
+   "size": [
+    330,
+    100
+   ],
+   "flags": {},
+   "order": 70,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "enabled",
+     "type": "BOOLEAN",
+     "link": 89
+    },
+    {
+     "name": "off",
+     "type": "IMAGE",
+     "link": 90
+    },
+    {
+     "name": "on",
+     "type": "IMAGE",
+     "link": 91
+    }
+   ],
+   "outputs": [
+    {
+     "name": "image",
+     "type": "IMAGE",
+     "links": [
+      93,
+      97,
+      99,
+      101
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "WaifuGate"
+   },
+   "title": "🚦 mouth"
+  },
+  {
+   "id": 71,
+   "type": "WaifuCompareGuard",
+   "pos": [
+    3600,
+    2680
+   ],
+   "size": [
+    330,
+    80
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 71,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "before",
+     "type": "IMAGE",
+     "link": 92
+    },
+    {
+     "name": "after",
+     "type": "IMAGE",
+     "link": 93
+    }
+   ],
+   "outputs": [
+    {
+     "name": "before",
+     "type": "IMAGE",
+     "links": [
+      94
+     ],
+     "slot_index": 0
+    },
+    {
+     "name": "after",
+     "type": "IMAGE",
+     "links": [
+      95
+     ],
+     "slot_index": 1
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "WaifuCompareGuard"
+   }
+  },
+  {
+   "id": 72,
+   "type": "Image Comparer (rgthree)",
+   "pos": [
+    3950,
+    1480
+   ],
+   "size": [
+    590,
+    1360
+   ],
+   "flags": {},
+   "order": 72,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "image_a",
+     "type": "IMAGE",
+     "link": 94
+    },
+    {
+     "name": "image_b",
+     "type": "IMAGE",
+     "link": 95
+    }
+   ],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "Image Comparer (rgthree)",
+    "comparer_mode": "Slide"
+   },
+   "widgets_values": [],
+   "title": "🔀 before / after - mouth"
+  },
+  {
+   "id": 73,
+   "type": "GetNode",
+   "pos": [
+    4620,
+    1490
+   ],
+   "size": [
+    210,
+    58
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 73,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "WAIFU",
+     "type": "WAIFU",
+     "links": [
+      96
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "GetNode"
+   },
+   "widgets_values": [
+    "waifu"
+   ],
+   "title": "Get_waifu",
+   "color": "#223",
+   "bgcolor": "#335"
+  },
+  {
+   "id": 74,
+   "type": "GetNode",
+   "pos": [
+    4620,
+    1530
+   ],
+   "size": [
+    210,
+    58
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 74,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "BOOLEAN",
+     "type": "BOOLEAN",
+     "links": [
+      98
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "GetNode"
+   },
+   "widgets_values": [
+    "sw_ultra"
+   ],
+   "title": "Get_sw_ultra",
+   "color": "#223",
+   "bgcolor": "#335"
+  },
+  {
+   "id": 75,
+   "type": "WaifuHiRes",
+   "pos": [
+    4620,
+    1750
+   ],
+   "size": [
+    330,
+    300
+   ],
+   "flags": {},
+   "order": 75,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "waifu",
+     "type": "WAIFU",
+     "link": 96
+    },
+    {
+     "name": "image",
+     "type": "IMAGE",
+     "link": 97
+    }
+   ],
+   "outputs": [
+    {
+     "name": "image",
+     "type": "IMAGE",
+     "links": [
+      100
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "WaifuHiRes"
+   },
+   "widgets_values": [
+    "2x-AnimeSharpV4_RCAN.safetensors",
+    2.0,
+    0.25,
+    20,
+    0.0,
+    "tiled",
+    1024,
+    2
+   ],
+   "title": "🔍 Ultra 2x (tiled)"
+  },
+  {
+   "id": 76,
+   "type": "WaifuGate",
+   "pos": [
+    4620,
+    2720
+   ],
+   "size": [
+    330,
+    100
+   ],
+   "flags": {},
+   "order": 76,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "enabled",
+     "type": "BOOLEAN",
+     "link": 98
+    },
+    {
+     "name": "off",
+     "type": "IMAGE",
+     "link": 99
+    },
+    {
+     "name": "on",
+     "type": "IMAGE",
+     "link": 100
+    }
+   ],
+   "outputs": [
+    {
+     "name": "image",
+     "type": "IMAGE",
+     "links": [
+      102,
+      105,
+      107
+     ],
+     "slot_index": 0
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "WaifuGate"
+   },
+   "title": "🚦 ultra"
+  },
+  {
+   "id": 77,
+   "type": "WaifuCompareGuard",
+   "pos": [
+    4620,
+    2680
+   ],
+   "size": [
+    330,
+    80
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 77,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "before",
+     "type": "IMAGE",
+     "link": 101
+    },
+    {
+     "name": "after",
+     "type": "IMAGE",
+     "link": 102
+    }
+   ],
+   "outputs": [
+    {
+     "name": "before",
+     "type": "IMAGE",
+     "links": [
+      103
+     ],
+     "slot_index": 0
+    },
+    {
+     "name": "after",
+     "type": "IMAGE",
+     "links": [
+      104
+     ],
+     "slot_index": 1
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "WaifuCompareGuard"
+   }
+  },
+  {
+   "id": 78,
+   "type": "Image Comparer (rgthree)",
+   "pos": [
+    4970,
+    1480
+   ],
+   "size": [
+    590,
+    1360
+   ],
+   "flags": {},
+   "order": 78,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "image_a",
+     "type": "IMAGE",
+     "link": 103
+    },
+    {
+     "name": "image_b",
+     "type": "IMAGE",
+     "link": 104
+    }
+   ],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "Image Comparer (rgthree)",
+    "comparer_mode": "Slide"
+   },
+   "widgets_values": [],
+   "title": "🔀 before / after - ultra"
+  },
+  {
+   "id": 79,
+   "type": "Note",
+   "pos": [
+    4620,
+    1570
+   ],
+   "size": [
+    330,
+    140
+   ],
+   "flags": {},
+   "order": 79,
+   "mode": 0,
+   "inputs": [],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "Note"
+   },
+   "widgets_values": [
+    "Another 2x on top, done in 1024px tiles so it fits in VRAM.\nWith Upscale 2x on: 896x1152 -> 3584x4608."
+   ],
+   "title": "ℹ️",
+   "color": "#432",
+   "bgcolor": "#653"
+  },
+  {
+   "id": 80,
+   "type": "SaveImage",
+   "pos": [
+    2580,
+    2960
+   ],
+   "size": [
+    1000,
+    1020
+   ],
+   "flags": {},
+   "order": 80,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "images",
+     "type": "IMAGE",
+     "link": 105
+    }
+   ],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "SaveImage"
+   },
+   "widgets_values": [
+    "Waifu/%date:yyyy-MM-dd%/waifu"
+   ],
+   "title": "💾 SAVED IMAGE (final)"
+  },
+  {
+   "id": 81,
+   "type": "Image Comparer (rgthree)",
+   "pos": [
+    3600,
+    2960
+   ],
+   "size": [
+    1960,
+    1020
+   ],
+   "flags": {},
+   "order": 81,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "image_a",
+     "type": "IMAGE",
+     "link": 108
+    },
+    {
+     "name": "image_b",
+     "type": "IMAGE",
+     "link": 109
+    }
+   ],
+   "outputs": [],
+   "properties": {
+    "Node name for S&R": "Image Comparer (rgthree)",
+    "comparer_mode": "Slide"
+   },
+   "widgets_values": [],
+   "title": "🔀 preview vs final (whole chain)"
+  },
+  {
+   "id": 82,
+   "type": "WaifuCompareGuard",
+   "pos": [
+    3600,
+    4030
+   ],
+   "size": [
+    200,
+    80
+   ],
+   "flags": {
+    "collapsed": true
+   },
+   "order": 82,
+   "mode": 0,
+   "inputs": [
+    {
+     "name": "before",
+     "type": "IMAGE",
+     "link": 106
+    },
+    {
+     "name": "after",
+     "type": "IMAGE",
+     "link": 107
+    }
+   ],
+   "outputs": [
+    {
+     "name": "before",
+     "type": "IMAGE",
+     "links": [
+      108
+     ],
+     "slot_index": 0
+    },
+    {
+     "name": "after",
+     "type": "IMAGE",
+     "links": [
+      109
+     ],
+     "slot_index": 1
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "WaifuCompareGuard"
+   }
+  }
+ ],
+ "links": [
+  [
+   1,
+   4,
+   0,
+   5,
+   0,
+   "BOOLEAN"
+  ],
+  [
+   2,
+   4,
+   1,
+   6,
+   0,
+   "BOOLEAN"
+  ],
+  [
+   3,
+   7,
+   0,
+   8,
+   0,
+   "BOOLEAN"
+  ],
+  [
+   4,
+   9,
+   0,
+   10,
+   0,
+   "BOOLEAN"
+  ],
+  [
+   5,
+   11,
+   0,
+   12,
+   0,
+   "BOOLEAN"
+  ],
+  [
+   6,
+   13,
+   0,
+   14,
+   0,
+   "BOOLEAN"
+  ],
+  [
+   7,
+   15,
+   0,
+   16,
+   0,
+   "BOOLEAN"
+  ],
+  [
+   8,
+   18,
+   0,
+   19,
+   0,
+   "MODEL"
+  ],
+  [
+   9,
+   18,
+   1,
+   19,
+   1,
+   "CLIP"
+  ],
+  [
+   10,
+   19,
+   0,
+   22,
+   0,
+   "MODEL"
+  ],
+  [
+   11,
+   19,
+   1,
+   22,
+   1,
+   "CLIP"
+  ],
+  [
+   12,
+   18,
+   2,
+   22,
+   2,
+   "VAE"
+  ],
+  [
+   13,
+   21,
+   0,
+   22,
+   3,
+   "WAIFU_SETTINGS"
+  ],
+  [
+   14,
+   2,
+   0,
+   22,
+   4,
+   "INT"
+  ],
+  [
+   15,
+   20,
+   0,
+   22,
+   5,
+   "STRING"
+  ],
+  [
+   16,
+   20,
+   1,
+   22,
+   6,
+   "STRING"
+  ],
+  [
+   17,
+   20,
+   2,
+   22,
+   7,
+   "STRING"
+  ],
+  [
+   18,
+   22,
+   1,
+   23,
+   0,
+   "STRING"
+  ],
+  [
+   19,
+   22,
+   0,
+   24,
+   0,
+   "WAIFU"
+  ],
+  [
+   20,
+   25,
+   0,
+   26,
+   0,
+   "WAIFU"
+  ],
+  [
+   21,
+   17,
+   0,
+   26,
+   1,
+   "LATENT"
+  ],
+  [
+   22,
+   28,
+   0,
+   29,
+   0,
+   "BOOLEAN"
+  ],
+  [
+   23,
+   26,
+   0,
+   29,
+   1,
+   "IMAGE"
+  ],
+  [
+   24,
+   27,
+   0,
+   30,
+   0,
+   "IMAGE"
+  ],
+  [
+   25,
+   30,
+   0,
+   29,
+   2,
+   "IMAGE"
+  ],
+  [
+   26,
+   29,
+   0,
+   31,
+   0,
+   "IMAGE"
+  ],
+  [
+   27,
+   33,
+   0,
+   35,
+   0,
+   "WAIFU"
+  ],
+  [
+   28,
+   35,
+   0,
+   36,
+   0,
+   "WAIFU"
+  ],
+  [
+   29,
+   29,
+   0,
+   37,
+   0,
+   "IMAGE"
+  ],
+  [
+   30,
+   27,
+   1,
+   37,
+   1,
+   "MASK"
+  ],
+  [
+   31,
+   36,
+   5,
+   37,
+   2,
+   "BASIC_PIPE"
+  ],
+  [
+   32,
+   34,
+   0,
+   38,
+   0,
+   "BOOLEAN"
+  ],
+  [
+   33,
+   29,
+   0,
+   38,
+   1,
+   "IMAGE"
+  ],
+  [
+   34,
+   37,
+   0,
+   38,
+   2,
+   "IMAGE"
+  ],
+  [
+   35,
+   29,
+   0,
+   39,
+   0,
+   "IMAGE"
+  ],
+  [
+   36,
+   38,
+   0,
+   39,
+   1,
+   "IMAGE"
+  ],
+  [
+   37,
+   39,
+   0,
+   40,
+   0,
+   "IMAGE"
+  ],
+  [
+   38,
+   39,
+   1,
+   40,
+   1,
+   "IMAGE"
+  ],
+  [
+   39,
+   42,
+   0,
+   44,
+   0,
+   "WAIFU"
+  ],
+  [
+   40,
+   38,
+   0,
+   44,
+   1,
+   "IMAGE"
+  ],
+  [
+   41,
+   43,
+   0,
+   45,
+   0,
+   "BOOLEAN"
+  ],
+  [
+   42,
+   38,
+   0,
+   45,
+   1,
+   "IMAGE"
+  ],
+  [
+   43,
+   44,
+   0,
+   45,
+   2,
+   "IMAGE"
+  ],
+  [
+   44,
+   38,
+   0,
+   46,
+   0,
+   "IMAGE"
+  ],
+  [
+   45,
+   45,
+   0,
+   46,
+   1,
+   "IMAGE"
+  ],
+  [
+   46,
+   46,
+   0,
+   47,
+   0,
+   "IMAGE"
+  ],
+  [
+   47,
+   46,
+   1,
+   47,
+   1,
+   "IMAGE"
+  ],
+  [
+   48,
+   49,
+   0,
+   52,
+   0,
+   "WAIFU"
+  ],
+  [
+   49,
+   45,
+   0,
+   53,
+   0,
+   "IMAGE"
+  ],
+  [
+   50,
+   52,
+   0,
+   53,
+   1,
+   "MODEL"
+  ],
+  [
+   51,
+   52,
+   1,
+   53,
+   2,
+   "CLIP"
+  ],
+  [
+   52,
+   52,
+   2,
+   53,
+   3,
+   "VAE"
+  ],
+  [
+   53,
+   52,
+   3,
+   53,
+   4,
+   "CONDITIONING"
+  ],
+  [
+   54,
+   52,
+   4,
+   53,
+   5,
+   "CONDITIONING"
+  ],
+  [
+   55,
+   51,
+   0,
+   53,
+   6,
+   "BBOX_DETECTOR"
+  ],
+  [
+   56,
+   51,
+   1,
+   53,
+   8,
+   "SEGM_DETECTOR"
+  ],
+  [
+   57,
+   50,
+   0,
+   54,
+   0,
+   "BOOLEAN"
+  ],
+  [
+   58,
+   45,
+   0,
+   54,
+   1,
+   "IMAGE"
+  ],
+  [
+   59,
+   53,
+   0,
+   54,
+   2,
+   "IMAGE"
+  ],
+  [
+   60,
+   45,
+   0,
+   55,
+   0,
+   "IMAGE"
+  ],
+  [
+   61,
+   54,
+   0,
+   55,
+   1,
+   "IMAGE"
+  ],
+  [
+   62,
+   55,
+   0,
+   56,
+   0,
+   "IMAGE"
+  ],
+  [
+   63,
+   55,
+   1,
+   56,
+   1,
+   "IMAGE"
+  ],
+  [
+   64,
+   57,
+   0,
+   60,
+   0,
+   "WAIFU"
+  ],
+  [
+   65,
+   54,
+   0,
+   61,
+   0,
+   "IMAGE"
+  ],
+  [
+   66,
+   60,
+   0,
+   61,
+   1,
+   "MODEL"
+  ],
+  [
+   67,
+   60,
+   1,
+   61,
+   2,
+   "CLIP"
+  ],
+  [
+   68,
+   60,
+   2,
+   61,
+   3,
+   "VAE"
+  ],
+  [
+   69,
+   60,
+   3,
+   61,
+   4,
+   "CONDITIONING"
+  ],
+  [
+   70,
+   60,
+   4,
+   61,
+   5,
+   "CONDITIONING"
+  ],
+  [
+   71,
+   59,
+   0,
+   61,
+   6,
+   "BBOX_DETECTOR"
+  ],
+  [
+   72,
+   59,
+   1,
+   61,
+   8,
+   "SEGM_DETECTOR"
+  ],
+  [
+   73,
+   58,
+   0,
+   62,
+   0,
+   "BOOLEAN"
+  ],
+  [
+   74,
+   54,
+   0,
+   62,
+   1,
+   "IMAGE"
+  ],
+  [
+   75,
+   61,
+   0,
+   62,
+   2,
+   "IMAGE"
+  ],
+  [
+   76,
+   54,
+   0,
+   63,
+   0,
+   "IMAGE"
+  ],
+  [
+   77,
+   62,
+   0,
+   63,
+   1,
+   "IMAGE"
+  ],
+  [
+   78,
+   63,
+   0,
+   64,
+   0,
+   "IMAGE"
+  ],
+  [
+   79,
+   63,
+   1,
+   64,
+   1,
+   "IMAGE"
+  ],
+  [
+   80,
+   65,
+   0,
+   68,
+   0,
+   "WAIFU"
+  ],
+  [
+   81,
+   62,
+   0,
+   69,
+   0,
+   "IMAGE"
+  ],
+  [
+   82,
+   68,
+   0,
+   69,
+   1,
+   "MODEL"
+  ],
+  [
+   83,
+   68,
+   1,
+   69,
+   2,
+   "CLIP"
+  ],
+  [
+   84,
+   68,
+   2,
+   69,
+   3,
+   "VAE"
+  ],
+  [
+   85,
+   68,
+   3,
+   69,
+   4,
+   "CONDITIONING"
+  ],
+  [
+   86,
+   68,
+   4,
+   69,
+   5,
+   "CONDITIONING"
+  ],
+  [
+   87,
+   67,
+   0,
+   69,
+   6,
+   "BBOX_DETECTOR"
+  ],
+  [
+   88,
+   67,
+   1,
+   69,
+   8,
+   "SEGM_DETECTOR"
+  ],
+  [
+   89,
+   66,
+   0,
+   70,
+   0,
+   "BOOLEAN"
+  ],
+  [
+   90,
+   62,
+   0,
+   70,
+   1,
+   "IMAGE"
+  ],
+  [
+   91,
+   69,
+   0,
+   70,
+   2,
+   "IMAGE"
+  ],
+  [
+   92,
+   62,
+   0,
+   71,
+   0,
+   "IMAGE"
+  ],
+  [
+   93,
+   70,
+   0,
+   71,
+   1,
+   "IMAGE"
+  ],
+  [
+   94,
+   71,
+   0,
+   72,
+   0,
+   "IMAGE"
+  ],
+  [
+   95,
+   71,
+   1,
+   72,
+   1,
+   "IMAGE"
+  ],
+  [
+   96,
+   73,
+   0,
+   75,
+   0,
+   "WAIFU"
+  ],
+  [
+   97,
+   70,
+   0,
+   75,
+   1,
+   "IMAGE"
+  ],
+  [
+   98,
+   74,
+   0,
+   76,
+   0,
+   "BOOLEAN"
+  ],
+  [
+   99,
+   70,
+   0,
+   76,
+   1,
+   "IMAGE"
+  ],
+  [
+   100,
+   75,
+   0,
+   76,
+   2,
+   "IMAGE"
+  ],
+  [
+   101,
+   70,
+   0,
+   77,
+   0,
+   "IMAGE"
+  ],
+  [
+   102,
+   76,
+   0,
+   77,
+   1,
+   "IMAGE"
+  ],
+  [
+   103,
+   77,
+   0,
+   78,
+   0,
+   "IMAGE"
+  ],
+  [
+   104,
+   77,
+   1,
+   78,
+   1,
+   "IMAGE"
+  ],
+  [
+   105,
+   76,
+   0,
+   80,
+   0,
+   "IMAGE"
+  ],
+  [
+   106,
+   29,
+   0,
+   82,
+   0,
+   "IMAGE"
+  ],
+  [
+   107,
+   76,
+   0,
+   82,
+   1,
+   "IMAGE"
+  ],
+  [
+   108,
+   82,
+   0,
+   81,
+   0,
+   "IMAGE"
+  ],
+  [
+   109,
+   82,
+   1,
+   81,
+   1,
+   "IMAGE"
+  ]
+ ],
+ "groups": [
+  {
+   "id": 1,
+   "title": "💖 CONTROL PANEL",
+   "bounding": [
+    -20,
+    -60,
+    1460,
+    1920
+   ],
+   "color": "#a1309b",
+   "font_size": 26,
+   "flags": {}
+  },
+  {
+   "id": 2,
+   "title": "🎨 GENERATE / 📂 LOAD IMAGE",
+   "bounding": [
+    1500,
+    -60,
+    1000,
+    1500
+   ],
+   "color": "#3f789e",
+   "font_size": 26,
+   "flags": {}
+  },
+  {
+   "id": 3,
+   "title": "🖌️ INPAINT (mode: Inpaint)",
+   "bounding": [
+    2560,
+    -60,
+    980,
+    1440
+   ],
+   "color": "#444",
+   "font_size": 26,
+   "flags": {}
+  },
+  {
+   "id": 4,
+   "title": "🔍 UPSCALE 2x (switch: 🔍 Upscale 2x)",
+   "bounding": [
+    3580,
+    -60,
+    980,
+    1440
+   ],
+   "color": "#3f8f5f",
+   "font_size": 26,
+   "flags": {}
+  },
+  {
+   "id": 5,
+   "title": "🙂 FACE DETAILER",
+   "bounding": [
+    4600,
+    -60,
+    980,
+    1440
+   ],
+   "color": "#b06634",
+   "font_size": 26,
+   "flags": {}
+  },
+  {
+   "id": 6,
+   "title": "✋ HAND DETAILER",
+   "bounding": [
+    2560,
+    1420,
+    980,
+    1440
+   ],
+   "color": "#b06634",
+   "font_size": 26,
+   "flags": {}
+  },
+  {
+   "id": 7,
+   "title": "👄 MOUTH DETAILER",
+   "bounding": [
+    3580,
+    1420,
+    980,
+    1440
+   ],
+   "color": "#b06634",
+   "font_size": 26,
+   "flags": {}
+  },
+  {
+   "id": 8,
+   "title": "💎 ULTRA 4x TOTAL (switch: 💎 Ultra)",
+   "bounding": [
+    4600,
+    1420,
+    980,
+    1440
+   ],
+   "color": "#2f8f8f",
+   "font_size": 26,
+   "flags": {}
+  },
+  {
+   "id": 9,
+   "title": "💾 FINAL",
+   "bounding": [
+    2560,
+    2900,
+    3020,
+    1160
+   ],
+   "color": "#a1309b",
+   "font_size": 26,
+   "flags": {}
+  }
+ ],
+ "config": {},
+ "extra": {
+  "ds": {
+   "scale": 0.45,
+   "offset": [
+    60,
+    120
+   ]
+  }
+ },
+ "version": 0.4
+}

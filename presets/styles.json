@@ -1,0 +1,8 @@
+{
+ "_help": "Art styles. Add your own with '+ Add style' in the phone UI (Art style picker).",
+ "None": {
+  "positive": "",
+  "negative": "",
+  "loras": []
+ }
+}

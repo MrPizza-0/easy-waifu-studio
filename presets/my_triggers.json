@@ -1,0 +1,3 @@
+{
+ "_help": "Your own trigger words per LoRA file, e.g. \"folder/my_lora.safetensors\": \"mytrigger\". They beat Civitai's."
+}

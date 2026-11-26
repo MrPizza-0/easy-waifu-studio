@@ -1,0 +1,14 @@
+[project]
+name = "comfyui-waifu-studio"
+description = "One anime workflow with presets, outfits and stages, plus a full phone UI for ComfyUI (generate, gallery, queue, inpaint)."
+version = "1.0.0"
+license = { file = "LICENSE" }
+dependencies = []
+
+[project.urls]
+Repository = "https://github.com/MrPizza-0/comfyui-waifu-studio"
+
+[tool.comfy]
+PublisherId = "mrpizza-0"
+DisplayName = "Waifu Studio"
+Icon = ""

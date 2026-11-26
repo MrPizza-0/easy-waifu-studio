@@ -1,0 +1,31 @@
+{
+ "_help": "One entry per checkpoint. Edit freely, then press R in ComfyUI to reload the dropdown. quality_loras are only applied when 'quality_loras' is ON in the loader. hires_denoise is used by the 2x pass when its denoise is 0. Anima models use unet/text_encoder/vae/shift instead of checkpoint/clip_skip; hires_scale and canvas are optional.",
+ "WAI NSFW Illustrious v14": {
+  "checkpoint": "waiNSFWIllustrious_v140.safetensors",
+  "clip_skip": -2,
+  "positive": "masterpiece, best quality, amazing quality,",
+  "negative": "(lowres:1.2), (worst quality:1.2), (low quality:1.2), (bad anatomy:1.2), comic, signature, watermark, logo, censored, fisheye, simple_background, photo_\\(object\\),",
+  "sampler": "euler_ancestral",
+  "scheduler": "normal",
+  "steps": 30,
+  "cfg": 7.0,
+  "hires_denoise": 0.3,
+  "quality_loras": []
+ },
+ "Anima Nova 3D CGAM v10 (3D render look)": {
+  "unet": "Nova3DCGAMV10.safetensors",
+  "text_encoder": "qwen_3_06b_base.safetensors",
+  "vae": "qwen_image_vae.safetensors",
+  "shift": 3.0,
+  "positive": "masterpiece, best quality, amazing quality, 3D, rendered, perfect composition,",
+  "negative": "worst quality, low quality, early, old, score_1, score_2, score_3, cartoon, graphic, painting, crayon, graphite, abstract, glitch, deformed, mutated, ugly, disfigured, long body, bad anatomy, bad hands, missing fingers, extra fingers, extra digits, fewer digits, cropped, very displeasing, artist name, blurry, jpeg artifacts, lowres, censor,",
+  "sampler": "euler_ancestral",
+  "scheduler": "simple",
+  "steps": 30,
+  "cfg": 5.0,
+  "hires_denoise": 0.45,
+  "hires_scale": 1.5,
+  "canvas": "Phone 720x1280 (Anima)",
+  "quality_loras": []
+ }
+}

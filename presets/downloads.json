@@ -1,0 +1,61 @@
+{
+ "_help": "Where each model file comes from. Key = models subfolder + file name. 'civitai' = model version id (needs a Civitai API key for most files), 'url' = direct link, 'zip' = the download is a zip; the file is extracted from it. Used by 'Download missing models' in the phone UI.",
+ "checkpoints/waiNSFWIllustrious_v140.safetensors": {
+  "civitai": 1761560,
+  "page": "https://civitai.com/models/827184?modelVersionId=1761560",
+  "name": "WAI-illustrious-SDXL",
+  "sizeMB": 6617,
+  "sha256": "bdb59bac77d94ae7a55ff893170f9554c3f349e48a1b73c0c17c0b7c6f4d41a2"
+ },
+ "diffusion_models/Nova3DCGAMV10.safetensors": {
+  "civitai": 3007078,
+  "page": "https://civitai.com/models/2678095?modelVersionId=3007078",
+  "name": "Nova 3DCG AM",
+  "sizeMB": 3989,
+  "sha256": "6538ab8d43e67c2596ce14c62dc49dbc98ca3e448067b7701cb3485f2e80f81c"
+ },
+ "text_encoders/qwen_3_06b_base.safetensors": {
+  "civitai": 2698710,
+  "page": "https://civitai.com/models/2400206?modelVersionId=2698710",
+  "name": "Qwen-3-0.6B base/anima",
+  "sizeMB": 1137,
+  "sha256": "cd2a512003e2f9f3cd3c32a9c3573f820bb28c940f73c57b1ddaa983d9223eba"
+ },
+ "vae/qwen_image_vae.safetensors": {
+  "civitai": 2089517,
+  "page": "https://civitai.com/models/1842123?modelVersionId=2089517",
+  "name": "Qwen-Image - GGUF",
+  "sizeMB": 242,
+  "sha256": "a70580f0213e67967ee9c95f05bb400e8fb08307e017a924bf3441223e023d1f"
+ },
+ "ultralytics/segm/adetailer2dMouth_v10.pt": {
+  "civitai": 1474840,
+  "page": "https://civitai.com/models/1306938?modelVersionId=1474840",
+  "name": "ADetailer 2d mouth detection [yolo/segmentation]",
+  "sizeMB": 6,
+  "sha256": "f5b6dfff33419f5a7719a66bd42255ed84a55bf190cdd2878baed96006649d72",
+  "required": true
+ },
+ "upscale_models/2x-AnimeSharpV4_RCAN.safetensors": {
+  "url": "https://github.com/Kim2091/Kim2091-Models/releases/download/2x-AnimeSharpV4/2x-AnimeSharpV4_RCAN.safetensors",
+  "name": "2x-AnimeSharpV4 (Kim2091)",
+  "sizeMB": 30,
+  "required": true
+ },
+ "ultralytics/segm/99coins_anime_girl_face_m_seg.pt": {
+  "civitai": 1207975,
+  "zip": true,
+  "page": "https://civitai.com/models/1076050?modelVersionId=1207975",
+  "name": "Anime Girl Face Segmentation (99coins)",
+  "sizeMB": 52,
+  "required": true
+ },
+ "ultralytics/segm/PitHandDetailer-v2-Test-v9c.pt": {
+  "civitai": 1780243,
+  "zip": true,
+  "page": "https://civitai.com/models/329458?modelVersionId=1780243",
+  "name": "PitHandDetailer v2",
+  "sizeMB": 54,
+  "required": true
+ }
+}

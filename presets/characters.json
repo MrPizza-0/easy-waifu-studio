@@ -1,0 +1,812 @@
+{
+ "_help": "Pick a character, then an outfit. Add your own with '+ Add character' in the phone UI. Each outfit has an 'anima' and/or 'illustrious' block (LoRAs + tags) and/or an 'any' block (tags only, any model).",
+ "✏️ Custom (leave box + LoRAs alone)": {
+  "custom": true
+ },
+ "None (empty box)": {
+  "tags": "",
+  "outfit": "",
+  "loras": []
+ },
+ "Raiden Shogun (Genshin Impact)": {
+  "franchise": "Genshin Impact",
+  "tags": "1girl, raiden shogun, purple hair, long hair, braid, purple eyes, mole under eye, large breasts",
+  "image": "https://safebooru.org/samples/3851/sample_5206b1eb9adb7bf55b71906e6ec51fda8188d2da.jpg",
+  "default_outfit": "Default",
+  "outfits": {
+   "Default": {
+    "any": {
+     "loras": [],
+     "tags": "1girl, raiden shogun, purple hair, long hair, braid, purple eyes, mole under eye, large breasts, japanese clothes, purple kimono, obi, shoulder armor, bridal gauntlets, purple thighhighs, hair ornament"
+    }
+   }
+  },
+  "image_source": "https://safebooru.org/index.php?page=post&s=view&id=4022942"
+ },
+ "Yae Miko (Genshin Impact)": {
+  "franchise": "Genshin Impact",
+  "tags": "1girl, yae miko, pink hair, long hair, purple eyes, fox ears, earrings",
+  "image": "https://safebooru.org/images/3553/4f9d2b4d752a28adf873a0bfff17dbc6.jpeg",
+  "default_outfit": "Default",
+  "outfits": {
+   "Default": {
+    "any": {
+     "loras": [],
+     "tags": "1girl, yae miko, pink hair, long hair, purple eyes, fox ears, earrings, nontraditional miko, japanese clothes, detached sleeves, white kimono, red skirt, wide sleeves, hair ornament"
+    }
+   }
+  },
+  "image_source": "https://safebooru.org/index.php?page=post&s=view&id=4250155"
+ },
+ "Eula (Genshin Impact)": {
+  "franchise": "Genshin Impact",
+  "tags": "1girl, eula \\(genshin impact\\), blue hair, medium hair, yellow eyes, hairband",
+  "image": "https://safebooru.org/samples/3565/sample_33d8aecfd1435bc0a0db93740abe5743d78ca543.jpg",
+  "default_outfit": "Default",
+  "outfits": {
+   "Default": {
+    "any": {
+     "loras": [],
+     "tags": "1girl, eula \\(genshin impact\\), blue hair, medium hair, yellow eyes, hairband, black leotard, white thighhighs, cape, gloves, high heel boots, vision \\(genshin impact\\)"
+    }
+   }
+  },
+  "image_source": "https://safebooru.org/index.php?page=post&s=view&id=3709380"
+ },
+ "Shenhe (Genshin Impact)": {
+  "franchise": "Genshin Impact",
+  "tags": "1girl, shenhe \\(genshin impact\\), white hair, very long hair, blue eyes, hair over one eye, large breasts",
+  "image": "https://safebooru.org/samples/3666/sample_dec5419836020cad8d5ab9f5c73e9f8e0d4f7062.jpg",
+  "default_outfit": "Default",
+  "outfits": {
+   "Default": {
+    "any": {
+     "loras": [],
+     "tags": "1girl, shenhe \\(genshin impact\\), white hair, very long hair, blue eyes, hair over one eye, large breasts, black bodysuit, hip vent, breast curtain, tassel, gloves, bodysuit"
+    }
+   }
+  },
+  "image_source": "https://safebooru.org/index.php?page=post&s=view&id=3826872"
+ },
+ "Yelan (Genshin Impact)": {
+  "franchise": "Genshin Impact",
+  "tags": "1girl, yelan \\(genshin impact\\), short hair, black hair, green eyes, mole on breast",
+  "image": "https://safebooru.org/samples/3767/sample_b3eb475a7df811da90941586d060c0bf6f55e174.jpg",
+  "default_outfit": "Default",
+  "outfits": {
+   "Default": {
+    "any": {
+     "loras": [],
+     "tags": "1girl, yelan \\(genshin impact\\), short hair, black hair, green eyes, mole on breast, white jacket, fur-trimmed jacket, blue dress, cleavage cutout, elbow gloves, tassel earrings"
+    }
+   }
+  },
+  "image_source": "https://safebooru.org/index.php?page=post&s=view&id=3934888"
+ },
+ "Kafka (Honkai: Star Rail)": {
+  "franchise": "Honkai: Star Rail",
+  "tags": "1girl, kafka \\(honkai: star rail\\), purple hair, long hair, purple eyes, eyewear on head",
+  "image": "https://safebooru.org/samples/3831/sample_be9d5568564c5fab235fa7501ae7c58534aa4131.jpg",
+  "default_outfit": "Default",
+  "outfits": {
+   "Default": {
+    "any": {
+     "loras": [],
+     "tags": "1girl, kafka \\(honkai: star rail\\), purple hair, long hair, purple eyes, eyewear on head, sunglasses, eyewear on head, white shirt, black jacket, purple gloves, black shorts, pantyhose, thigh strap"
+    }
+   }
+  },
+  "image_source": "https://safebooru.org/index.php?page=post&s=view&id=4002201"
+ },
+ "Acheron (Honkai: Star Rail)": {
+  "franchise": "Honkai: Star Rail",
+  "tags": "1girl, acheron \\(honkai: star rail\\), purple hair, very long hair, hair over one eye, large breasts",
+  "image": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/6e522dc3-c2bf-484b-9f0e-eabaabeba839/width=450/10975926.jpeg",
+  "default_outfit": "Default",
+  "outfits": {
+   "Default": {
+    "any": {
+     "loras": [],
+     "tags": "1girl, acheron \\(honkai: star rail\\), purple hair, very long hair, hair over one eye, large breasts, black coat, black gloves, black shorts, single thighhigh, chain, red eyes"
+    }
+   }
+  },
+  "image_source": "https://civitai.com/models/338428"
+ },
+ "Black Swan (Honkai: Star Rail)": {
+  "franchise": "Honkai: Star Rail",
+  "tags": "1girl, black swan \\(honkai: star rail\\), purple hair, long hair, green eyes, veil",
+  "image": "https://files.yande.re/sample/52926e7ac0db35421985170c77532a0e/yande.re%201153917%20sample%20black_swan_%28honkai%3A_star_rail%29%20cleavage%20fukuro_ko_%28greentea%29%20garter%20honkai%3A_star_rail%20leotard%20no_bra%20pantyhose%20thighhighs.jpg",
+  "default_outfit": "Default",
+  "outfits": {
+   "Default": {
+    "any": {
+     "loras": [],
+     "tags": "1girl, black swan \\(honkai: star rail\\), purple hair, long hair, green eyes, veil, purple dress, see-through, detached sleeves, gloves, hat, veil, jewelry"
+    }
+   }
+  },
+  "image_source": "https://yande.re/post/show/1153917"
+ },
+ "Himeko (Honkai: Star Rail)": {
+  "franchise": "Honkai: Star Rail",
+  "tags": "1girl, himeko \\(honkai: star rail\\), red hair, long hair, yellow eyes, large breasts",
+  "image": "https://safebooru.org/samples/4489/sample_07fb477443179cb1ded02e670e397ddbd87a57cf.jpg",
+  "default_outfit": "Default",
+  "outfits": {
+   "Default": {
+    "any": {
+     "loras": [],
+     "tags": "1girl, himeko \\(honkai: star rail\\), red hair, long hair, yellow eyes, large breasts, white shirt, black corset, red skirt, pantyhose, gloves, sunglasses on head"
+    }
+   }
+  },
+  "image_source": "https://safebooru.org/index.php?page=post&s=view&id=4681326"
+ },
+ "Rapi (NIKKE)": {
+  "franchise": "NIKKE",
+  "tags": "1girl, rapi \\(nikke\\), red eyes, brown hair, long hair, bangs",
+  "image": "https://safebooru.org/samples/4012/sample_8f45510d521def50979821872237e93fdaedbdd4.jpg",
+  "default_outfit": "Default",
+  "outfits": {
+   "Default": {
+    "any": {
+     "loras": [],
+     "tags": "1girl, rapi \\(nikke\\), red eyes, brown hair, long hair, bangs, beret, black jacket, cropped jacket, red necktie, black gloves, black shirt, belt, thighhighs"
+    }
+   }
+  },
+  "image_source": "https://safebooru.org/index.php?page=post&s=view&id=4192853"
+ },
+ "Red Hood (NIKKE)": {
+  "franchise": "NIKKE",
+  "tags": "1girl, red hood \\(nikke\\), long hair, red hair, red eyes, large breasts",
+  "image": "https://konachan.net/sample/11a6308f5106c22410950133181a0bdf/Konachan.com%20-%20394924%20sample%20bell%20bikini_top%20blance%20blush%20breasts%20chibi%20christmas%20cleavage%20fang%20gloves%20gun%20hat%20orange_eyes%20pink_hair%20purple_eyes%20santa_hat%20scarf%20shorts%20weapon.jpg",
+  "default_outfit": "Default",
+  "outfits": {
+   "Default": {
+    "any": {
+     "loras": [],
+     "tags": "1girl, red hood \\(nikke\\), long hair, red hair, red eyes, large breasts, black choker, beret, detached collar, red necktie, red jacket, cropped jacket, black leotard, black gloves, white shirt, belt, black thighhighs, black skirt"
+    }
+   }
+  },
+  "image_source": "https://konachan.net/post/show/394924"
+ },
+ "Anis (NIKKE)": {
+  "franchise": "NIKKE",
+  "tags": "1girl, anis \\(nikke\\), yellow eyes, brown hair, short hair, ahoge, large breasts",
+  "image": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/52d9631d-5795-454e-9801-a21d78eb0f02/width=450/1875688.jpeg",
+  "default_outfit": "Default",
+  "outfits": {
+   "Default": {
+    "any": {
+     "loras": [],
+     "tags": "1girl, anis \\(nikke\\), yellow eyes, brown hair, short hair, ahoge, large breasts, beret, black jacket, open jacket, grey shirt, crop top, black shorts, thigh strap, black thighhighs, fingerless gloves"
+    }
+   }
+  },
+  "image_source": "https://civitai.com/models/122778"
+ },
+ "Dorothy (NIKKE)": {
+  "franchise": "NIKKE",
+  "tags": "1girl, dorothy \\(nikke\\), pink hair, very long hair, purple eyes, single hair bun",
+  "image": "https://safebooru.org/images/784/cf58427c3ea0b71962894512aaed48b1.jpeg",
+  "default_outfit": "Default",
+  "outfits": {
+   "Default": {
+    "any": {
+     "loras": [],
+     "tags": "1girl, dorothy \\(nikke\\), pink hair, very long hair, purple eyes, single hair bun, braid, hair ribbon, frilled choker, white dress, frilled dress, see-through sleeves, white thighhighs"
+    }
+   }
+  },
+  "image_source": "https://safebooru.org/index.php?page=post&s=view&id=5827550"
+ },
+ "Tracer (Overwatch)": {
+  "franchise": "Overwatch",
+  "tags": "1girl, tracer \\(overwatch\\), brown hair, short hair, spiked hair, brown eyes",
+  "image": "https://safebooru.org/images/2086/188526cb86ba962f71afbccbbce7616e7808fe89.jpg",
+  "default_outfit": "Default",
+  "outfits": {
+   "Default": {
+    "any": {
+     "loras": [],
+     "tags": "1girl, tracer \\(overwatch\\), brown hair, short hair, spiked hair, brown eyes, goggles, bomber jacket, brown jacket, orange bodysuit, chronal accelerator, fingerless gloves"
+    }
+   }
+  },
+  "image_source": "https://safebooru.org/index.php?page=post&s=view&id=2176093"
+ },
+ "Mercy (Overwatch)": {
+  "franchise": "Overwatch",
+  "tags": "1girl, mercy \\(overwatch\\), blonde hair, high ponytail, blue eyes",
+  "image": "https://safebooru.org/samples/2307/sample_f8b81ff12fa9e5883550d9a4a04d4d3a817db6e3.jpg",
+  "default_outfit": "Default",
+  "outfits": {
+   "Default": {
+    "any": {
+     "loras": [],
+     "tags": "1girl, mercy \\(overwatch\\), blonde hair, high ponytail, blue eyes, white bodysuit, mechanical wings, halo, yellow wings, gloves, pantyhose"
+    }
+   }
+  },
+  "image_source": "https://safebooru.org/index.php?page=post&s=view&id=2401158"
+ },
+ "Widowmaker (Overwatch)": {
+  "franchise": "Overwatch",
+  "tags": "1girl, widowmaker \\(overwatch\\), purple skin, blue skin, long ponytail, yellow eyes",
+  "image": "https://safebooru.org/samples/2307/sample_da5a5a7e07358939848d970a36ffce0889187cca.jpg",
+  "default_outfit": "Default",
+  "outfits": {
+   "Default": {
+    "any": {
+     "loras": [],
+     "tags": "1girl, widowmaker \\(overwatch\\), purple skin, blue skin, long ponytail, yellow eyes, purple bodysuit, plunging neckline, visor on head, gloves, thigh boots"
+    }
+   },
+   "Black lingerie": {
+    "any": {
+     "loras": [],
+     "tags": "1girl, widowmaker \\(overwatch\\), purple skin, blue skin, long ponytail, yellow eyes, black lingerie, makeup, hoop earrings"
+    }
+   }
+  },
+  "image_source": "https://safebooru.org/index.php?page=post&s=view&id=2401156"
+ },
+ "D.Va (Overwatch)": {
+  "franchise": "Overwatch",
+  "tags": "1girl, d.va \\(overwatch\\), brown hair, long hair, brown eyes, facial mark, whisker markings",
+  "image": "https://safebooru.org/samples/1955/sample_d3d9935352e5352378c2cbee2b13693b6124cd11.jpg",
+  "default_outfit": "Pilot suit",
+  "outfits": {
+   "Pilot suit": {
+    "any": {
+     "loras": [],
+     "tags": "1girl, d.va \\(overwatch\\), brown hair, long hair, brown eyes, facial mark, whisker markings, headphones, pilot suit, blue bodysuit, ribbed bodysuit, clothes writing, shoulder pads, white gloves"
+    }
+   }
+  },
+  "image_source": "https://safebooru.org/index.php?page=post&s=view&id=2039871"
+ },
+ "Kiriko (Overwatch)": {
+  "franchise": "Overwatch",
+  "tags": "1girl, kiriko \\(overwatch\\), green hair, short hair, high ponytail, brown eyes, facial mark",
+  "image": "https://safebooru.org/samples/342/sample_841d03c45cfc257daa63861c6383a48c.jpg",
+  "default_outfit": "Default",
+  "outfits": {
+   "Default": {
+    "any": {
+     "loras": [],
+     "tags": "1girl, kiriko \\(overwatch\\), green hair, short hair, high ponytail, brown eyes, facial mark, fox mask, mask on head, red fingerless gloves, japanese clothes, white kimono, red pants, rope belt"
+    }
+   }
+  },
+  "image_source": "https://safebooru.org/index.php?page=post&s=view&id=7255742"
+ },
+ "Ashe (Overwatch)": {
+  "franchise": "Overwatch",
+  "tags": "1girl, ashe \\(overwatch\\), white hair, short hair, red eyes, red lips",
+  "image": "https://safebooru.org/images/2576/48de3aebfca1a55d4d98897f743d16cf498b4779.jpg",
+  "default_outfit": "Default",
+  "outfits": {
+   "Default": {
+    "any": {
+     "loras": [],
+     "tags": "1girl, ashe \\(overwatch\\), white hair, short hair, red eyes, red lips, cowboy hat, black vest, white shirt, red necktie, black gloves, black pants"
+    }
+   }
+  },
+  "image_source": "https://safebooru.org/index.php?page=post&s=view&id=2684243"
+ },
+ "Ahri (League of Legends)": {
+  "franchise": "League of Legends",
+  "tags": "1girl, ahri \\(league of legends\\), black hair, long hair, yellow eyes, fox ears, fox tail, multiple tails, whisker markings",
+  "image": "https://safebooru.org/images/3753/a81536fb498a11c49881ba277bb61f76adf13962.jpg",
+  "default_outfit": "Classic",
+  "outfits": {
+   "Classic": {
+    "any": {
+     "loras": [],
+     "tags": "1girl, ahri \\(league of legends\\), black hair, long hair, yellow eyes, fox ears, fox tail, multiple tails, whisker markings, korean clothes, detached sleeves, red dress, cleavage, bare shoulders"
+    }
+   },
+   "K/DA": {
+    "any": {
+     "loras": [],
+     "tags": "1girl, ahri \\(league of legends\\), black hair, long hair, yellow eyes, fox ears, fox tail, multiple tails, whisker markings, k/da \\(league of legends\\), blonde hair, black bodysuit, choker, thighhighs"
+    }
+   }
+  },
+  "image_source": "https://safebooru.org/index.php?page=post&s=view&id=3920028"
+ },
+ "Kai'Sa (League of Legends)": {
+  "franchise": "League of Legends",
+  "tags": "1girl, kai'sa, purple hair, long hair, purple eyes, facial mark",
+  "image": "https://safebooru.org/samples/2563/sample_9e31086cd46799edc4f7fe15fa078170bf951b71.jpg",
+  "default_outfit": "Classic",
+  "outfits": {
+   "Classic": {
+    "any": {
+     "loras": [],
+     "tags": "1girl, kai'sa, purple hair, long hair, purple eyes, facial mark, purple bodysuit, skin tight, biomechanical armor, gauntlets"
+    }
+   },
+   "K/DA": {
+    "any": {
+     "loras": [],
+     "tags": "1girl, kai'sa, purple hair, long hair, purple eyes, facial mark, k/da \\(league of legends\\), crop top, cropped jacket, white pants"
+    }
+   }
+  },
+  "image_source": "https://safebooru.org/index.php?page=post&s=view&id=2670681"
+ },
+ "Evelynn (League of Legends)": {
+  "franchise": "League of Legends",
+  "tags": "1girl, evelynn \\(league of legends\\), long hair, yellow eyes, makeup",
+  "image": "https://safebooru.org/images/3277/6b2d362c13995ba6c0cb4d2fba6408c15af286de.png",
+  "default_outfit": "K/DA",
+  "outfits": {
+   "K/DA": {
+    "any": {
+     "loras": [],
+     "tags": "1girl, evelynn \\(league of legends\\), long hair, yellow eyes, makeup, k/da \\(league of legends\\), black hair, fur coat, sunglasses, black leotard, thigh boots"
+    }
+   }
+  },
+  "image_source": "https://safebooru.org/index.php?page=post&s=view&id=3407509"
+ },
+ "Miss Fortune (League of Legends)": {
+  "franchise": "League of Legends",
+  "tags": "1girl, miss fortune \\(league of legends\\), red hair, long hair, wavy hair, blue eyes, large breasts",
+  "image": "https://safebooru.org/samples/3744/sample_dc45882488e1c41601a619d9696dd8655f64b3ec.jpg",
+  "default_outfit": "Classic",
+  "outfits": {
+   "Classic": {
+    "any": {
+     "loras": [],
+     "tags": "1girl, miss fortune \\(league of legends\\), red hair, long hair, wavy hair, blue eyes, large breasts, pirate hat, black corset, cleavage, white pants, thigh boots, dual wielding pistols"
+    }
+   }
+  },
+  "image_source": "https://safebooru.org/index.php?page=post&s=view&id=3910802"
+ },
+ "Tifa Lockhart (Final Fantasy)": {
+  "franchise": "Final Fantasy",
+  "tags": "1girl, tifa lockhart, black hair, long hair, low-tied long hair, red eyes, large breasts",
+  "image": "https://safebooru.org/images/1449/8dcbde3fdc21a79afe1967ff2f266680ed4ec44b.jpg",
+  "default_outfit": "Default",
+  "outfits": {
+   "Default": {
+    "any": {
+     "loras": [],
+     "tags": "1girl, tifa lockhart, black hair, long hair, low-tied long hair, red eyes, large breasts, white tank top, suspenders, black skirt, fingerless gloves, elbow pads, red boots"
+    }
+   },
+   "Dress": {
+    "any": {
+     "loras": [],
+     "tags": "1girl, tifa lockhart, black hair, long hair, low-tied long hair, red eyes, large breasts, purple dress, choker, earrings, hair ornament"
+    }
+   }
+  },
+  "image_source": "https://safebooru.org/index.php?page=post&s=view&id=1517445"
+ },
+ "Aerith Gainsborough (Final Fantasy)": {
+  "franchise": "Final Fantasy",
+  "tags": "1girl, aerith gainsborough, brown hair, long hair, braid, green eyes, hair ribbon",
+  "image": "https://safebooru.org/samples/3423/sample_cfbf37549d64efb0fca3b7f1aeb01c97b07a7106.jpg",
+  "default_outfit": "Default",
+  "outfits": {
+   "Default": {
+    "any": {
+     "loras": [],
+     "tags": "1girl, aerith gainsborough, brown hair, long hair, braid, green eyes, hair ribbon, pink dress, red jacket, cropped jacket, bracelet, choker"
+    }
+   }
+  },
+  "image_source": "https://safebooru.org/index.php?page=post&s=view&id=3560341"
+ },
+ "Lightning Farron (Final Fantasy)": {
+  "franchise": "Final Fantasy",
+  "tags": "1girl, lightning farron, pink hair, medium hair, blue eyes",
+  "image": "https://safebooru.org/images/2947/2656f73d56b7463cf662a7af80d6df0a2886867d.jpg",
+  "default_outfit": "Default",
+  "outfits": {
+   "Default": {
+    "any": {
+     "loras": [],
+     "tags": "1girl, lightning farron, pink hair, medium hair, blue eyes, white coat, sleeveless, brown skirt, red cape, gloves, belt"
+    }
+   }
+  },
+  "image_source": "https://safebooru.org/index.php?page=post&s=view&id=3069543"
+ },
+ "Chun-Li (Street Fighter)": {
+  "franchise": "Street Fighter",
+  "tags": "1girl, chun-li, brown hair, double bun, bun cover, brown eyes, thick thighs",
+  "image": "https://safebooru.org/images/3730/e7c37aebabec40868c9c2e6c39ef966b.jpeg",
+  "default_outfit": "Default",
+  "outfits": {
+   "Default": {
+    "any": {
+     "loras": [],
+     "tags": "1girl, chun-li, brown hair, double bun, bun cover, brown eyes, thick thighs, china dress, blue dress, pelvic curtain, puffy short sleeves, spiked bracelet, pantyhose, white boots"
+    }
+   }
+  },
+  "image_source": "https://safebooru.org/index.php?page=post&s=view&id=3895302"
+ },
+ "Cammy White (Street Fighter)": {
+  "franchise": "Street Fighter",
+  "tags": "1girl, cammy white, blonde hair, long hair, twin braids, blue eyes, scar on cheek",
+  "image": "https://safebooru.org/samples/3677/sample_7dacdeff7cbccfed51ead74942e649b9.jpg",
+  "default_outfit": "Classic",
+  "outfits": {
+   "Classic": {
+    "any": {
+     "loras": [],
+     "tags": "1girl, cammy white, blonde hair, long hair, twin braids, blue eyes, scar on cheek, red beret, green leotard, highleg leotard, red gauntlets, harness, bare legs, combat boots"
+    }
+   }
+  },
+  "image_source": "https://safebooru.org/index.php?page=post&s=view&id=3839283"
+ },
+ "Juri Han (Street Fighter)": {
+  "franchise": "Street Fighter",
+  "tags": "1girl, han juri, black hair, hair horns, purple eyes",
+  "image": "https://safebooru.org/samples/3640/sample_5318e7751935508c5bf71738a086861c.jpg",
+  "default_outfit": "Classic",
+  "outfits": {
+   "Classic": {
+    "any": {
+     "loras": [],
+     "tags": "1girl, han juri, black hair, hair horns, purple eyes, purple dougi, fingerless gloves, baggy pants, spiked collar"
+    }
+   }
+  },
+  "image_source": "https://safebooru.org/index.php?page=post&s=view&id=3799766"
+ },
+ "2B (NieR:Automata)": {
+  "franchise": "NieR",
+  "tags": "1girl, 2b \\(nier:automata\\), white hair, short hair, black blindfold, mole under mouth",
+  "image": "https://safebooru.org/samples/3294/sample_19a09c0e11a6486609aa4a2bb2873b62d4b9065e.jpg",
+  "default_outfit": "Default",
+  "outfits": {
+   "Default": {
+    "any": {
+     "loras": [],
+     "tags": "1girl, 2b \\(nier:automata\\), white hair, short hair, black blindfold, mole under mouth, black dress, cleavage cutout, juliet sleeves, feather-trimmed sleeves, black gloves, thigh boots, black thighhighs"
+    }
+   }
+  },
+  "image_source": "https://safebooru.org/index.php?page=post&s=view&id=3424852"
+ },
+ "A2 (NieR:Automata)": {
+  "franchise": "NieR",
+  "tags": "1girl, a2 \\(nier:automata\\), white hair, long hair, blue eyes, android",
+  "image": "https://safebooru.org/samples/2402/sample_bc620211d9932065f1e233b8b9417505f2fe3711.jpg",
+  "default_outfit": "Default",
+  "outfits": {
+   "Default": {
+    "any": {
+     "loras": [],
+     "tags": "1girl, a2 \\(nier:automata\\), white hair, long hair, blue eyes, android, black shorts, black tank top, tattered clothes, arm wraps, black boots"
+    }
+   }
+  },
+  "image_source": "https://safebooru.org/index.php?page=post&s=view&id=2502339"
+ },
+ "Makima (Chainsaw Man)": {
+  "franchise": "Chainsaw Man",
+  "tags": "1girl, makima \\(chainsaw man\\), red hair, braided ponytail, ringed eyes, yellow eyes",
+  "image": "https://safebooru.org/samples/3177/sample_4c9734301b779c36c2a50bd3f6df19209fd72b8f.jpg",
+  "default_outfit": "Default",
+  "outfits": {
+   "Default": {
+    "any": {
+     "loras": [],
+     "tags": "1girl, makima \\(chainsaw man\\), red hair, braided ponytail, ringed eyes, yellow eyes, white shirt, collared shirt, black necktie, black pants, formal"
+    }
+   }
+  },
+  "image_source": "https://safebooru.org/index.php?page=post&s=view&id=3304818"
+ },
+ "Yor Briar (Spy x Family)": {
+  "franchise": "Spy x Family",
+  "tags": "1girl, yor briar, black hair, long hair, red eyes, sidelocks, hairband",
+  "image": "https://safebooru.org/samples/3799/sample_e0b11b7267a6cd9d9b9f73dc48684f274dbab9a4.jpg",
+  "default_outfit": "Thorn Princess",
+  "outfits": {
+   "Thorn Princess": {
+    "any": {
+     "loras": [],
+     "tags": "1girl, yor briar, black hair, long hair, red eyes, sidelocks, hairband, black dress, off-shoulder dress, rose hair ornament, fingerless gloves, thigh boots"
+    }
+   },
+   "Casual": {
+    "any": {
+     "loras": [],
+     "tags": "1girl, yor briar, black hair, long hair, red eyes, sidelocks, hairband, red sweater, off-shoulder sweater, long skirt"
+    }
+   }
+  },
+  "image_source": "https://safebooru.org/index.php?page=post&s=view&id=3970036"
+ },
+ "Nami (One Piece)": {
+  "franchise": "One Piece",
+  "tags": "1girl, nami \\(one piece\\), orange hair, long hair, brown eyes, shoulder tattoo, large breasts",
+  "image": "https://safebooru.org/images/3356/28996e81b00205a907004383faa72871f72819b5.jpg",
+  "default_outfit": "Post-timeskip",
+  "outfits": {
+   "Post-timeskip": {
+    "any": {
+     "loras": [],
+     "tags": "1girl, nami \\(one piece\\), orange hair, long hair, brown eyes, shoulder tattoo, large breasts, bikini top only, jeans, bracelet, log pose"
+    }
+   }
+  },
+  "image_source": "https://safebooru.org/index.php?page=post&s=view&id=3489959"
+ },
+ "Nico Robin (One Piece)": {
+  "franchise": "One Piece",
+  "tags": "1girl, nico robin, black hair, long hair, blue eyes, large breasts",
+  "image": "https://safebooru.org/images/2066/37bdbc432789ee9673e85b931f280e470feac638.jpg",
+  "default_outfit": "Post-timeskip",
+  "outfits": {
+   "Post-timeskip": {
+    "any": {
+     "loras": [],
+     "tags": "1girl, nico robin, black hair, long hair, blue eyes, large breasts, sunglasses on head, purple jacket, cleavage, jeans"
+    }
+   }
+  },
+  "image_source": "https://safebooru.org/index.php?page=post&s=view&id=2154119"
+ },
+ "Boa Hancock (One Piece)": {
+  "franchise": "One Piece",
+  "tags": "1girl, boa hancock, black hair, very long hair, blue eyes, earrings, large breasts",
+  "image": "https://safebooru.org/images/2054/c23ca92043516e6f4b383bb58ad6a9bbb6188301.png",
+  "default_outfit": "Default",
+  "outfits": {
+   "Default": {
+    "any": {
+     "loras": [],
+     "tags": "1girl, boa hancock, black hair, very long hair, blue eyes, earrings, large breasts, red dress, side slit, cape, high heels"
+    }
+   }
+  },
+  "image_source": "https://safebooru.org/index.php?page=post&s=view&id=2142140"
+ },
+ "Tsunade (Naruto)": {
+  "franchise": "Naruto",
+  "tags": "1girl, tsunade \\(naruto\\), blonde hair, long hair, low twintails, brown eyes, facial mark, huge breasts",
+  "image": "https://safebooru.org/samples/3450/sample_f7cec42d5001008a44104e4d19ed477aa24ba7bb.jpg",
+  "default_outfit": "Default",
+  "outfits": {
+   "Default": {
+    "any": {
+     "loras": [],
+     "tags": "1girl, tsunade \\(naruto\\), blonde hair, long hair, low twintails, brown eyes, facial mark, huge breasts, green haori, grey kimono, cleavage, blue pants"
+    }
+   }
+  },
+  "image_source": "https://safebooru.org/index.php?page=post&s=view&id=3588957"
+ },
+ "Rangiku Matsumoto (Bleach)": {
+  "franchise": "Bleach",
+  "tags": "1girl, matsumoto rangiku, orange hair, long hair, blue eyes, mole under mouth, large breasts",
+  "image": "https://safebooru.org/images/329/5d6cceb90a2d40c383b4ea67266bf8c5c6e35861.jpg",
+  "default_outfit": "Shinigami",
+  "outfits": {
+   "Shinigami": {
+    "any": {
+     "loras": [],
+     "tags": "1girl, matsumoto rangiku, orange hair, long hair, blue eyes, mole under mouth, large breasts, black kimono, cleavage, pink scarf, white haori"
+    }
+   }
+  },
+  "image_source": "https://safebooru.org/index.php?page=post&s=view&id=329276"
+ },
+ "Yoruichi Shihouin (Bleach)": {
+  "franchise": "Bleach",
+  "tags": "1girl, shihouin yoruichi, purple hair, ponytail, yellow eyes, dark-skinned female",
+  "image": "https://safebooru.org/images/3390/234799b6f0cf1b1a5ce4604074c4232701ea188c.jpg",
+  "default_outfit": "Default",
+  "outfits": {
+   "Default": {
+    "any": {
+     "loras": [],
+     "tags": "1girl, shihouin yoruichi, purple hair, ponytail, yellow eyes, dark-skinned female, orange shirt, black pants, sleeveless"
+    }
+   }
+  },
+  "image_source": "https://safebooru.org/index.php?page=post&s=view&id=3527198"
+ },
+ "Albedo (Overlord)": {
+  "franchise": "Overlord",
+  "tags": "1girl, albedo \\(overlord\\), black hair, long hair, yellow eyes, horns, black wings, slit pupils",
+  "image": "https://safebooru.org/samples/3409/sample_f788433b686d3bf65814f486fa6e4565151b4b42.jpg",
+  "default_outfit": "Default",
+  "outfits": {
+   "Default": {
+    "any": {
+     "loras": [],
+     "tags": "1girl, albedo \\(overlord\\), black hair, long hair, yellow eyes, horns, black wings, slit pupils, white dress, elbow gloves, bare shoulders, cleavage"
+    }
+   }
+  },
+  "image_source": "https://safebooru.org/index.php?page=post&s=view&id=3546063"
+ },
+ "Jeanne d'Arc Alter (Fate)": {
+  "franchise": "Fate",
+  "tags": "1girl, jeanne d'arc alter \\(fate\\), white hair, short hair, yellow eyes",
+  "image": "https://safebooru.org/samples/3848/sample_0e7efc989e707dff9474c4595cd2ba0bdbb9a815.jpg",
+  "default_outfit": "Default",
+  "outfits": {
+   "Default": {
+    "any": {
+     "loras": [],
+     "tags": "1girl, jeanne d'arc alter \\(fate\\), white hair, short hair, yellow eyes, armor, black cape, fur trim, gauntlets, headpiece"
+    }
+   },
+   "Swimsuit Berserker": {
+    "any": {
+     "loras": [],
+     "tags": "1girl, jeanne d'arc alter \\(fate\\), white hair, short hair, yellow eyes, jeanne d'arc alter \\(swimsuit berserker\\) \\(fate\\), black bikini, black choker, o-ring"
+    }
+   }
+  },
+  "image_source": "https://safebooru.org/index.php?page=post&s=view&id=4019775"
+ },
+ "Scathach (Fate)": {
+  "franchise": "Fate",
+  "tags": "1girl, scathach \\(fate\\), purple hair, long hair, red eyes",
+  "image": "https://safebooru.org/samples/3499/sample_6b437e04fbe29d29c8e5a168d6b7c58d5b485176.jpg",
+  "default_outfit": "Default",
+  "outfits": {
+   "Default": {
+    "any": {
+     "loras": [],
+     "tags": "1girl, scathach \\(fate\\), purple hair, long hair, red eyes, purple bodysuit, skin tight, shoulder armor, veil"
+    }
+   }
+  },
+  "image_source": "https://safebooru.org/index.php?page=post&s=view&id=3640703"
+ },
+ "Atago (Azur Lane)": {
+  "franchise": "Azur Lane",
+  "tags": "1girl, atago \\(azur lane\\), black hair, long hair, brown eyes, animal ears, large breasts",
+  "image": "https://safebooru.org/samples/2865/sample_f5170dc7512257cd4f38cbb673214a6029fce6d0.jpg",
+  "default_outfit": "Default",
+  "outfits": {
+   "Default": {
+    "any": {
+     "loras": [],
+     "tags": "1girl, atago \\(azur lane\\), black hair, long hair, brown eyes, animal ears, large breasts, military uniform, white gloves, black skirt, white thighhighs, hair ribbon"
+    }
+   }
+  },
+  "image_source": "https://safebooru.org/index.php?page=post&s=view&id=2984612"
+ },
+ "Taihou (Azur Lane)": {
+  "franchise": "Azur Lane",
+  "tags": "1girl, taihou \\(azur lane\\), black hair, long hair, red eyes, large breasts",
+  "image": "https://safebooru.org/samples/3157/sample_9f3fdd0a0b99bab2abad6be185448d31a2ce4cbf.jpg",
+  "default_outfit": "Default",
+  "outfits": {
+   "Default": {
+    "any": {
+     "loras": [],
+     "tags": "1girl, taihou \\(azur lane\\), black hair, long hair, red eyes, large breasts, red kimono, off shoulder, cleavage, black thighhighs, hair ornament"
+    }
+   }
+  },
+  "image_source": "https://safebooru.org/index.php?page=post&s=view&id=3284384"
+ },
+ "Misato Katsuragi (Evangelion)": {
+  "franchise": "Evangelion",
+  "tags": "1girl, katsuragi misato, purple hair, long hair, brown eyes",
+  "image": "https://safebooru.org/images/2759/3ea5a8d91fb921f96cfe45e39c17987c4c769d93.jpg",
+  "default_outfit": "Default",
+  "outfits": {
+   "Default": {
+    "any": {
+     "loras": [],
+     "tags": "1girl, katsuragi misato, purple hair, long hair, brown eyes, black dress, red jacket, cross necklace"
+    }
+   }
+  },
+  "image_source": "https://safebooru.org/index.php?page=post&s=view&id=2873685"
+ },
+ "Morrigan Aensland (Darkstalkers)": {
+  "franchise": "Darkstalkers",
+  "tags": "1girl, morrigan aensland, green hair, long hair, head wings, demon girl",
+  "image": "https://safebooru.org/images/2249/a4bbfcc5014b00b1cf7b56ef38f84aaa020d3125.jpg",
+  "default_outfit": "Default",
+  "outfits": {
+   "Default": {
+    "any": {
+     "loras": [],
+     "tags": "1girl, morrigan aensland, green hair, long hair, head wings, demon girl, black leotard, heart cutout, bat print, purple pantyhose, low wings"
+    }
+   }
+  },
+  "image_source": "https://safebooru.org/index.php?page=post&s=view&id=2343255"
+ },
+ "Mai Shiranui (KOF)": {
+  "franchise": "King of Fighters",
+  "tags": "1girl, shiranui mai, brown hair, long hair, ponytail, brown eyes, large breasts",
+  "image": "https://safebooru.org/samples/3376/sample_d756d717118bd212c17b821c615652d2197a4201.jpg",
+  "default_outfit": "Default",
+  "outfits": {
+   "Default": {
+    "any": {
+     "loras": [],
+     "tags": "1girl, shiranui mai, brown hair, long hair, ponytail, brown eyes, large breasts, red kunoichi outfit, pelvic curtain, sideboob, japanese clothes, tabi"
+    }
+   }
+  },
+  "image_source": "https://safebooru.org/index.php?page=post&s=view&id=3510284"
+ },
+ "Bayonetta": {
+  "franchise": "Bayonetta",
+  "tags": "1girl, bayonetta \\(bayonetta\\), black hair, glasses, mole under mouth, blue eyes",
+  "image": "https://safebooru.org/samples/2558/sample_04ebf2ab434ce7f5afa21a414eb9a4de706a6feb.jpg",
+  "default_outfit": "Bayonetta 1",
+  "outfits": {
+   "Bayonetta 1": {
+    "any": {
+     "loras": [],
+     "tags": "1girl, bayonetta \\(bayonetta\\), black hair, glasses, mole under mouth, blue eyes, beehive hairdo, black bodysuit, gloves, earrings, high heels"
+    }
+   }
+  },
+  "image_source": "https://safebooru.org/index.php?page=post&s=view&id=2665702"
+ },
+ "Eve (Stellar Blade)": {
+  "franchise": "Stellar Blade",
+  "tags": "1girl, eve \\(stellar blade\\), brown hair, long hair, ponytail, brown eyes",
+  "image": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/90d336c1-2cce-4def-b6a9-274ea743e381/width=450/43178867.jpeg",
+  "default_outfit": "Default",
+  "outfits": {
+   "Default": {
+    "any": {
+     "loras": [],
+     "tags": "1girl, eve \\(stellar blade\\), brown hair, long hair, ponytail, brown eyes, black bodysuit, skin tight, hair ribbon"
+    }
+   }
+  },
+  "image_source": "https://civitai.com/models/998868"
+ },
+ "Mirko (My Hero Academia)": {
+  "franchise": "My Hero Academia",
+  "tags": "1girl, mirko, white hair, very long hair, red eyes, rabbit ears, dark-skinned female, muscular female",
+  "image": "https://safebooru.org/samples/3539/sample_32ecb6989a24f178bb8e8e805f402cc8dabe914c.jpg",
+  "default_outfit": "Hero costume",
+  "outfits": {
+   "Hero costume": {
+    "any": {
+     "loras": [],
+     "tags": "1girl, mirko, white hair, very long hair, red eyes, rabbit ears, dark-skinned female, muscular female, white leotard, purple trim, white gloves, thighhighs, rabbit tail"
+    }
+   }
+  },
+  "image_source": "https://safebooru.org/index.php?page=post&s=view&id=3681975"
+ },
+ "Mitsuri Kanroji (Demon Slayer)": {
+  "franchise": "Demon Slayer",
+  "tags": "1girl, kanroji mitsuri, pink hair, green hair, gradient hair, braid, green eyes, mole under eye",
+  "image": "https://safebooru.org/samples/3124/sample_50904041614f99fa5bda3f687368c4c06ac38533.jpg",
+  "default_outfit": "Corps uniform",
+  "outfits": {
+   "Corps uniform": {
+    "any": {
+     "loras": [],
+     "tags": "1girl, kanroji mitsuri, pink hair, green hair, gradient hair, braid, green eyes, mole under eye, demon slayer uniform, cleavage, haori, pleated skirt, green thighhighs"
+    }
+   }
+  },
+  "image_source": "https://safebooru.org/index.php?page=post&s=view&id=3251294"
+ }
+}
