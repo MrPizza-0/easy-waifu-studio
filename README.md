@@ -1,8 +1,8 @@
 # Waifu Studio for ComfyUI
 
 A phone app for ComfyUI and an anime workflow to go with it. You pick a character, an outfit, an art style and a
-model, then generate. The workflow has upscaling, face, hand and mouth detailers, and inpainting, and the phone
-app controls all of it.
+model, then generate. You have upscaling, face, hand and mouth detailers, inpainting, multiple model presets, character presets, easy lora integration and more!
+And all of it can be controlled on your mobile device from anywhere in the world!
 
 <!-- screenshots / screen recording go here -->
 
