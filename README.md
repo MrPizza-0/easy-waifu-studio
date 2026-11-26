@@ -103,6 +103,23 @@ Edit style changes the words, the strength or the LoRA file.
 When you switch to another character, style or model, the previous one's LoRAs are removed from the LoRA list.
 If you'd rather have them only switched off, change that in Output & advanced.
 
+## Models
+
+Two model presets are included: WAI-NSFW-Illustrious v14 and Nova 3DCG (Anima). To add another model, open
+the Presets card and tap Add model:
+
+- **Find a model on Civitai**: search by name or paste the link to the model's Civitai page. Pick the version you
+  want. Waifu Studio fills in the steps, CFG, sampler, scheduler, quality words and negative prompt from the settings
+  the creator recommends on that page, and uses the included preset's values for anything the page doesn't say.
+  Check them, then tap Add and download.
+- **Create preset**: for a model file you already have. Pick the file and set the values yourself.
+
+Illustrious, NoobAI, SDXL and Anima models work. Pony, SD 1.5, Flux and v-pred models don't work with this
+workflow, and the search marks them "not usable here".
+
+Edit model changes any value of the selected preset, including the model file. Your model presets are saved in
+`ComfyUI/user/waifu_studio/models.json`, so updating Waifu Studio doesn't touch them.
+
 ## Credits
 
 Character pictures are linked from Safebooru and Civitai and are not part of this repository. LoRAs belong to

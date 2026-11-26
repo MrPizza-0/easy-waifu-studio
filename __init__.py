@@ -8,7 +8,7 @@ from .nodes import NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS
 WEB_DIRECTORY = "./web"
 
 # the nodes must work even if a page fails to load
-for _name in ("guide", "mobile", "downloads", "characters", "connect"):
+for _name in ("guide", "mobile", "downloads", "characters", "modelpresets", "connect"):
     try:
         __import__(f"{__name__}.{_name}", fromlist=["register_routes"]).register_routes()
     except Exception as ex:

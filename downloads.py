@@ -59,8 +59,10 @@ def needed():
         who = f"model: {name}"
         if m.get("unet"):
             add("diffusion_models/" + m["unet"], who)
-            add("text_encoders/" + m["text_encoder"], who)
-            add("vae/" + m["vae"], who)
+            if m.get("text_encoder"):
+                add("text_encoders/" + m["text_encoder"], who)
+            if m.get("vae"):
+                add("vae/" + m["vae"], who)
         elif m.get("checkpoint"):
             add("checkpoints/" + m["checkpoint"], who)
         for n, _ in m.get("quality_loras") or []:

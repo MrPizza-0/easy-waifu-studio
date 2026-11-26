@@ -31,7 +31,7 @@ SCHEDULERS = comfy.samplers.KSampler.SCHEDULERS
 
 # ------------------------------------------------------------------ presets
 USER_PRESETS = os.path.join(folder_paths.get_user_directory(), "waifu_studio")
-USER_FILES = ("characters.json", "styles.json", "downloads.json")  # the user's own additions/edits live here, safe from pack updates
+USER_FILES = ("characters.json", "styles.json", "downloads.json", "models.json")  # the user's own additions/edits live here, safe from pack updates
 
 
 def _read(path):

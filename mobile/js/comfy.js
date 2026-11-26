@@ -109,6 +109,7 @@ export async function boot() {
 export async function refreshAfterDownload() {
   S.presets = await api("/waifu/presets");
   S.loras = null;
+  if (S.models) { try { S.models = await api("/waifu/m/api/models"); } catch {} }  // the missing-files list
   const types = Object.keys(S.info);
   S.info = {};
   await ensureInfo(types);

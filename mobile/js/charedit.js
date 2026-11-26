@@ -5,6 +5,7 @@ import { S, changed, queue, refreshAfterDownload, jobImages, relOf } from "./com
 import { tagArea } from "./widgets.js";
 import { loraPicker, loraInfo } from "./loras.js";
 import { pic } from "./chars.js";
+import { openModelDraft } from "./modeledit.js";
 
 const FAMS = [["anima", "Anima models"], ["illustrious", "Illustrious / SDXL"], ["any", "Any model (no LoRA)"]];
 const famLabel = { anima: "Anima", illustrious: "Illustrious", any: "Any model" };
@@ -41,11 +42,11 @@ export function addCharacterSheet(mergeInto = null) {
 
 // ------------------------------------------------------------ Civitai search -> draft
 export function civitaiFlow(mergeInto = null, mode = "character") {
-  const open = (id) => (mode === "style" ? openStyleDraft(id) : openDraft(id, mergeInto));
+  const open = (id) => (mode === "style" ? openStyleDraft(id) : mode === "model" ? openModelDraft(id) : openDraft(id, mergeInto));
   sheet({
-    title: mode === "style" ? "Find a style LoRA on Civitai" : "Find a LoRA on Civitai", full: true,
+    title: mode === "style" ? "Find a style LoRA on Civitai" : mode === "model" ? "Find a model on Civitai" : "Find a LoRA on Civitai", full: true,
     body: (bd, close) => {
-      const inp = h("input.inp", { type: "search", placeholder: "Name (e.g. Luna Snow) or a Civitai link", enterkeyhint: "search", style: { fontSize: "16px" } });
+      const inp = h("input.inp", { type: "search", placeholder: mode === "model" ? "Name or a Civitai link" : "Name (e.g. Luna Snow) or a Civitai link", enterkeyhint: "search", style: { fontSize: "16px" } });
       const go = h("button.btn.pri", { onclick: () => run() }, icon("search"), "Search");
       const out = h("div", { style: { display: "flex", flexDirection: "column", gap: "8px" } });
       bd.append(h("div.row", h("div.grow", inp), go), out);
@@ -57,12 +58,12 @@ export function civitaiFlow(mergeInto = null, mode = "character") {
         if (!q) return;
         clear(out, h("div.empty-state", h("span.spin")));
         let r;
-        try { r = await api("/waifu/m/api/civitai/search?q=" + encodeURIComponent(q)); }
+        try { r = await api(`/waifu/m/api/civitai/${mode === "model" ? "model-search" : "search"}?q=` + encodeURIComponent(q)); }
         catch (e) { clear(out, h("div.warnline", icon("info"), e.message)); return; }
         if (r.model_id) { close(); return open(r.model_id); }
         if (!r.results.length) { clear(out, h("div.empty-state", "Nothing found. Try a shorter name, or paste the link.")); return; }
         clear(out, r.results.map((m) => h("button.lcard", { style: { textAlign: "left", opacity: m.families.length ? 1 : 0.45 }, onclick: () => {
-          if (!m.families.length) return toast("This LoRA is not for Anima or Illustrious models, so it can't be used here.", { err: true });
+          if (!m.families.length) return toast(mode === "model" ? "This model is not Illustrious, SDXL or Anima, so it can't be used here." : "This LoRA is not for Anima or Illustrious models, so it can't be used here.", { err: true });
           close(); open(m.id);
         } },
           m.image ? h("img.nsfw", { src: pic(m.image), loading: "lazy" }) : h("div.noimg"),
@@ -428,7 +429,7 @@ export function addStyleSheet() {
     body: (bd, close) => {
       bd.append(
         bigButton("search", "Find a style on Civitai", null, () => { close(); setTimeout(() => civitaiFlow(null, "style"), 250); }),
-        bigButton("edit", "Make one by hand", null, () => { close(); setTimeout(() => editStyle(null), 250); }));
+        bigButton("edit", "Create preset", null, () => { close(); setTimeout(() => editStyle(null), 250); }));
     },
   });
 }
@@ -526,7 +527,7 @@ export function editStyle(name) {
           tagArea(st.positive || "", (v) => { st.positive = v; }, { placeholder: "trigger words, art style words…" }),
           groups.length ? h("div.lbl", "Trigger words") : null,
           groups.length ? h("div.chips", groups.map((gw) => h("button.chip", { onclick: () => { st.positive = [st.positive, gw.trim()].map((x) => (x || "").trim().replace(/,$/, "")).filter(Boolean).join(", ") + ","; draw(); } }, "+ " + gw.trim().slice(0, 70)))) : null,
-          h("div.lbl", "Words to avoid"),
+          h("div.lbl", "Negative prompt"),
           tagArea(st.negative || "", (v) => { st.negative = v; }, { placeholder: "optional" }),
           h("button.btn.pri.block", { style: { height: "52px", fontSize: "16px" }, onclick: save }, icon("check"), "Save"),
           !isNew && h("button.btn.block.ghost.danger", { onclick: async () => {

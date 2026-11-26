@@ -6,6 +6,7 @@ import { S, on, changed, queue, undo, canUndo, loadWorkflowFile, saveWorkflowFil
 import { randomSeed, SEED_MAX, outfitFamilies } from "./graph.js";
 import { pickCharacter, pickOutfit, charOutfits, famBadges, charImage } from "./chars.js";
 import { addCharacterSheet, editCharacter, civitaiFlow, exportPack, importPack, autoPicture, addStyleSheet, editStyle } from "./charedit.js";
+import { addModelSheet, editModel } from "./modeledit.js";
 import { widgetControl, nodeFields, allNodesSheet, tagArea } from "./widgets.js";
 import { openViewer } from "./viewer.js";
 import { pickFromGallery } from "./gallery.js";
@@ -402,7 +403,10 @@ function presetSection() {
         h("div.row", { style: { gap: "6px" } },
           G.get(r.presets, "art_style") && G.get(r.presets, "art_style") !== "None" && h("button.btn.sm.grow", { onclick: () => editStyle(G.get(r.presets, "art_style")) }, icon("edit"), "Edit style"),
           h("button.btn.sm.grow", { onclick: () => addStyleSheet() }, icon("plus"), "Add style")),
-        mk("model_preset", "model", "Model", P.models, (m) => `${short(m.unet || m.checkpoint)} · ${m.steps} steps · cfg ${m.cfg} · ${m.sampler}`));
+        mk("model_preset", "model", "Model", P.models, (m) => `${short(m.unet || m.checkpoint)} · ${m.steps} steps · cfg ${m.cfg} · ${m.sampler}`),
+        h("div.row", { style: { gap: "6px" } },
+          G.get(r.presets, "model_preset") && P.models[G.get(r.presets, "model_preset")] && h("button.btn.sm.grow", { onclick: () => editModel(G.get(r.presets, "model_preset")) }, icon("edit"), "Edit model"),
+          h("button.btn.sm.grow", { onclick: () => addModelSheet() }, icon("plus"), "Add model")));
     },
   });
 }
