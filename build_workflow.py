@@ -98,7 +98,7 @@ UPSCALE FROM / INPAINT: put the image in 📂 Load Image (inpaint: right-click
 it > Open in MaskEditor, paint the area), then set MODE.
 
 Phone UI: http://<this pc>:8188/waifu/m/   LoRA guide: /waifu/loras
-Preset files: custom_nodes/comfyui-waifu-studio/presets/*.json (edit, press R)."""
+Preset files: custom_nodes/easy-waifu-studio/presets/*.json (edit, press R)."""
 
 
 def preset_state():
