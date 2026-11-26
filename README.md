@@ -108,4 +108,6 @@ If you'd rather have them only switched off, change that in Output & advanced.
 Character pictures are linked from Safebooru and Civitai and are not part of this repository. LoRAs belong to
 their Civitai creators. The tag autocomplete list comes from ComfyUI-Custom-Scripts by pythongosssss.
 
-License: MIT.
+Copyright (C) 2026 MrPizza-0. License: GPL-3.0 (see `LICENSE`). You may use, change and share it, but anything
+you share that is based on it must stay under GPL-3.0, with its source code and this copyright notice.
+Versions published before November 26, 2026 were released under the MIT license.
