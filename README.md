@@ -4,17 +4,15 @@ A phone app for ComfyUI and an anime workflow to go with it. You pick a characte
 model, then generate. You have upscaling, face, hand and mouth detailers, inpainting, multiple model presets, character presets, easy lora integration and more!
 And all of it can be controlled on your mobile device from anywhere in the world!
 
-<p>
-  <img src="docs/create.jpg" width="19%" alt="Create screen">
-  <img src="docs/characters.jpg" width="19%" alt="Character list">
-  <img src="docs/importer.jpg" width="19%" alt="Adding a character from a Civitai LoRA">
-  <img src="docs/inpaint.jpg" width="19%" alt="Inpaint before and after">
-  <img src="docs/gallery.jpg" width="19%" alt="Gallery">
+<p align="center">
+  <img src="docs/create.jpg" width="240" alt="The Create screen on a phone">
+  &nbsp;
+  <img src="docs/inpaint.gif" width="240" alt="Painting an inpaint mask with a finger, then comparing before and after">
 </p>
 
-<img src="docs/inpaint.gif" width="300" alt="Painting an inpaint mask on the phone, then the before/after slider">
-
 ## Phone app
+
+<img src="docs/gallery.jpg" width="220" align="right" alt="Gallery">
 
 Open `http://<your-pc>:8188/waifu/m/` in your phone's browser. You don't install anything on the phone.
 
@@ -30,6 +28,8 @@ Open `http://<your-pc>:8188/waifu/m/` in your phone's browser. You don't install
 - **All nodes** lets you edit every setting of every node in the workflow.
 - **Models & downloads** lists the model files the presets need and downloads the missing ones.
 - The Android back button works, and you can install the page as an app (see Phone access).
+
+<br clear="right">
 
 ## Install
 
@@ -60,6 +60,8 @@ Use [Tailscale](https://tailscale.com) (free) on the PC and the phone. Then eith
 
 ## Characters and outfits
 
+<img src="docs/characters.jpg" width="220" align="right" alt="Character list with pictures">
+
 51 characters come with the pack. They need no LoRA because the models already know them: Genshin Impact,
 Honkai: Star Rail, NIKKE, Overwatch, League of Legends, Final Fantasy, Street Fighter, One Piece, Fate and others.
 Each has a picture. The pictures are links to Safebooru and Civitai, downloaded and cached on your PC the first
@@ -73,6 +75,10 @@ To add a character from a Civitai LoRA, in the phone app:
    type (Anima or Illustrious) and a picture. If you already have her, the new outfits are added to her.
 4. Look over the list. Untick outfits you don't want, tap Fix to change words, then tap Add and download.
 
+<br clear="right">
+
+<img src="docs/importer.jpg" width="220" align="right" alt="Checking an imported character, with Fix buttons">
+
 The importer gets things wrong sometimes, so everything can be changed afterwards. Edit her opens an editor for
 the name, picture and outfits. For each outfit you can set the LoRA, its strength and the words, and the trigger
 words from the LoRA page show up as buttons you tap to add. If you change one of the 51 built-in characters, you
@@ -83,6 +89,8 @@ Your characters are saved in `ComfyUI/user/waifu_studio/`, so updating Waifu Stu
 When you switch between an Anima and an Illustrious model, each character switches to her LoRA for that model.
 
 The LoRAs belong to the people who made them. Waifu Studio downloads them from the creators' own Civitai pages.
+
+<br clear="right">
 
 ## Art styles
 
