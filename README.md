@@ -4,7 +4,15 @@ A phone app for ComfyUI and an anime workflow to go with it. You pick a characte
 model, then generate. You have upscaling, face, hand and mouth detailers, inpainting, multiple model presets, character presets, easy lora integration and more!
 And all of it can be controlled on your mobile device from anywhere in the world!
 
-<!-- screenshots / screen recording go here -->
+<p>
+  <img src="docs/create.jpg" width="19%" alt="Create screen">
+  <img src="docs/characters.jpg" width="19%" alt="Character list">
+  <img src="docs/importer.jpg" width="19%" alt="Adding a character from a Civitai LoRA">
+  <img src="docs/inpaint.jpg" width="19%" alt="Inpaint before and after">
+  <img src="docs/gallery.jpg" width="19%" alt="Gallery">
+</p>
+
+<img src="docs/inpaint.gif" width="300" alt="Painting an inpaint mask on the phone, then the before/after slider">
 
 ## Phone app
 
